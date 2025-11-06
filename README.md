@@ -15,1967 +15,832 @@ A comprehensive collection of 43 C programming exercises covering fundamental to
 
 ---
 
-## Section 1: Format Specifiers
+<div align="center">
 
-### **i) Basic Input/Output Operations**
+## Section `1`: Format Specifiers
 
-📁 **File:** `1-i_basic_io.c`
+</div>
+
+### **[`i)` Number Format Display](https://github.com/elsesourav/c-problems/blob/main/1-i_number_format_display.c)**
 
 **Question:**  
-Write a C program demonstrating basic input and output operations using different format specifiers.
+Write a C program to display a number in hexadecimal, decimal, and octal formats.
 
 **Description:**  
-This program demonstrates various format specifiers in C including %d (integer), %f (float), %lf (double), %c (character), %s (string), and %u (unsigned). It shows how to properly read and display different data types with proper formatting.
+This program takes an integer input from the user and displays it in three different number formats: Hexadecimal (base 16), Decimal (base 10), and Octal (base 8).
 
 **How to Solve:**
 
-1. Declare variables of different data types (int, float, double, char, string)
-2. Use printf() to prompt user for input
-3. Use scanf() with appropriate format specifiers to read input
-4. Display the values using printf() with proper formatting
-5. Demonstrate precision control for floating-point numbers
+1. Declare an integer variable to store the input number
+2. Use scanf() to read the number from user
+3. Use printf() with format specifiers:
+   - %d or %i for decimal
+   - %x for hexadecimal (lowercase)
+   - %X for hexadecimal (uppercase)
+   - %o for octal
+4. Display the number in all three formats
 
----
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-i_number_format_display.c)**
 
-### **ii) Size and Range of Data Types**
+```c
+#include <stdio.h>
 
-📁 **File:** `1-ii_sizeof_range.c`
+int main() {
+   int number;
 
-**Question:**  
-Write a C program to display the size and range of various data types.
+   printf("Enter an integer number: ");
+   scanf("%d", &number);
 
-**Description:**  
-This program uses sizeof() operator to find the size of different data types in bytes. It also calculates and displays the minimum and maximum values that each data type can hold using limits.h header file.
+   printf("\n--- Number Format Display ---\n");
+   printf("Decimal format:           %d\n", number);
+   printf("Hexadecimal (lowercase):  %x\n", number);
+   printf("Hexadecimal (uppercase):  %X\n", number);
+   printf("Octal format:             %o\n", number);
 
-**How to Solve:**
+   // With prefixes (0x for hex, 0 for octal)
+   printf("\n--- With Prefixes ---\n");
+   printf("Hexadecimal with prefix:  %#x\n", number);
+   printf("Hexadecimal with prefix:  %#X\n", number);
+   printf("Octal with prefix:        %#o\n", number);
 
-1. Include limits.h and float.h for predefined constants
-2. Use sizeof() operator for each data type
-3. Display size in bytes
-4. Use macros like INT_MIN, INT_MAX, FLT_MIN, FLT_MAX for ranges
-5. Format output in a readable table format
-
----
-
-### **iii) ASCII Values**
-
-📁 **File:** `1-iii_ascii_values.c`
-
-**Question:**  
-Write a C program to display ASCII values of characters and vice versa.
-
-**Description:**  
-This program demonstrates the relationship between characters and their ASCII values. It shows how to convert characters to ASCII codes and ASCII codes back to characters, including a complete ASCII table display.
-
-**How to Solve:**
-
-1. Read a character from user
-2. Display its ASCII value using %d format specifier
-3. Read an ASCII value and display corresponding character
-4. Create a loop to display complete ASCII table (0-127)
-5. Show both printable and non-printable characters
-
----
-
-### **iv) Number System Conversions**
-
-📁 **File:** `1-iv_number_systems.c`
-
-**Question:**  
-Write a C program to convert numbers between different number systems (Decimal, Binary, Octal, Hexadecimal).
-
-**Description:**  
-This program performs conversions between decimal, binary, octal, and hexadecimal number systems. It demonstrates bitwise operations and modular arithmetic for base conversions.
-
-**How to Solve:**
-
-1. **Decimal to Binary:** Repeatedly divide by 2, store remainders
-2. **Decimal to Octal:** Repeatedly divide by 8, store remainders
-3. **Decimal to Hexadecimal:** Repeatedly divide by 16, convert remainders to hex digits
-4. **Binary/Octal/Hex to Decimal:** Multiply each digit by base^position and sum
-5. Display all conversions with proper formatting
-
----
-
-## Section 2: Control Structures
-
-### **v) Leap Year Check**
-
-📁 **File:** `2-v_leap_year.c`
-
-**Question:**  
-Write a C program to check whether a given year is a leap year or not.
-
-**Description:**  
-This program determines if a year is a leap year using the standard leap year rules: divisible by 4 but not by 100, OR divisible by 400.
-
-**How to Solve:**
-
-1. Read year from user
-2. Check conditions:
-   - If divisible by 400 → Leap year
-   - Else if divisible by 100 → Not a leap year
-   - Else if divisible by 4 → Leap year
-   - Else → Not a leap year
-3. Display result with explanation
-4. Show next/previous leap years
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-Input: 2024
-Output: 2024 is a Leap Year (divisible by 4 and not by 100)
-
-Input: 1900
-Output: 1900 is NOT a Leap Year (divisible by 100 but not by 400)
-
-Input: 2000
-Output: 2000 is a Leap Year (divisible by 400)
-```
-
----
-
-### **vi) Prime Number Check**
-
-📁 **File:** `2-vi_prime_number.c`
-
-**Question:**  
-Write a C program to check whether a given number is prime or not.
-
-**Description:**  
-This program determines if a number is prime by checking divisibility. It uses an optimized approach checking only up to square root of the number.
-
-**How to Solve:**
-
-1. Read number from user
-2. Handle special cases (numbers ≤ 1 are not prime, 2 is prime)
-3. Check if even (not prime except 2)
-4. Loop from 3 to √n with step 2
-5. If any divisor found, not prime
-6. Display result with factors if composite
-
-**Example:**
-
-```
-Input: 17
-Output: 17 is a PRIME number
-
-Input: 24
-Output: 24 is NOT a prime number
-Factors: 1, 2, 3, 4, 6, 8, 12, 24
-```
-
----
-
-### **vii) Armstrong Number Check**
-
-📁 **File:** `2-vii_armstrong_number.c`
-
-**Question:**  
-Write a C program to check if a number is an Armstrong number (narcissistic number).
-
-**Description:**  
-An Armstrong number is a number that equals the sum of its own digits each raised to the power of the number of digits. Example: 153 = 1³ + 5³ + 3³
-
-**How to Solve:**
-
-1. Read number and store original value
-2. Count number of digits
-3. Extract each digit using modulo 10
-4. Calculate digit^(number of digits)
-5. Sum all powered digits
-6. Compare sum with original number
-
-**Example:**
-
-```
-Input: 153
-Output: 153 is an Armstrong number
-Calculation: 1³ + 5³ + 3³ = 1 + 125 + 27 = 153
-
-Input: 9474
-Output: 9474 is an Armstrong number
-Calculation: 9⁴ + 4⁴ + 7⁴ + 4⁴ = 6561 + 256 + 2401 + 256 = 9474
-```
-
----
-
-### **viii) Palindrome Check**
-
-📁 **File:** `2-viii_palindrome.c`
-
-**Question:**  
-Write a C program to check if a number is a palindrome.
-
-**Description:**  
-A palindrome number reads the same forwards and backwards. This program reverses the number and compares it with the original.
-
-**How to Solve:**
-
-1. Read number and store original
-2. Initialize reversed number to 0
-3. Extract last digit using modulo 10
-4. Build reversed number: reversed = reversed \* 10 + digit
-5. Remove last digit: number = number / 10
-6. Compare reversed with original
-
-**Example:**
-
-```
-Input: 12321
-Output: 12321 is a PALINDROME
-
-Input: 12345
-Output: 12345 is NOT a palindrome
-Reversed: 54321
-```
-
----
-
-### **ix) Perfect Number Check**
-
-📁 **File:** `2-ix_perfect_number.c`
-
-**Question:**  
-Write a C program to check if a number is a perfect number.
-
-**Description:**  
-A perfect number is a positive integer equal to the sum of its proper divisors (excluding itself). Example: 6 = 1 + 2 + 3
-
-**How to Solve:**
-
-1. Read number from user
-2. Find all divisors from 1 to n/2
-3. Sum all divisors
-4. Compare sum with original number
-5. Display all divisors
-
-**Example:**
-
-```
-Input: 28
-Output: 28 is a PERFECT number
-Divisors: 1, 2, 4, 7, 14
-Sum: 1 + 2 + 4 + 7 + 14 = 28
-
-Input: 12
-Output: 12 is NOT a perfect number
-Divisors: 1, 2, 3, 4, 6
-Sum: 16 (deficient number)
-```
-
----
-
-### **x) Grade Calculator**
-
-📁 **File:** `2-x_grade_calculator.c`
-
-**Question:**  
-Write a C program to calculate percentage and assign grades based on marks.
-
-**Description:**  
-This program takes marks in multiple subjects, calculates total, percentage, and assigns letter grades based on percentage ranges.
-
-**How to Solve:**
-
-1. Input number of subjects and marks
-2. Calculate total marks
-3. Calculate percentage = (total / max_marks) × 100
-4. Assign grade based on ranges:
-   - A: 90-100%, B: 80-89%, C: 70-79%, D: 60-69%, F: <60%
-5. Display result with pass/fail status
-
-**Example:**
-
-```
-Input: 3 subjects: 85, 92, 78
+Input: 255
 Output:
-Total: 255/300
-Percentage: 85.00%
-Grade: B
-Status: PASSED
+--- Number Format Display ---
+Decimal format:           255
+Hexadecimal (lowercase):  ff
+Hexadecimal (uppercase):  FF
+Octal format:             377
+
+--- With Prefixes ---
+Hexadecimal with prefix:  0xff
+Hexadecimal with prefix:  0XFF
+Octal with prefix:        0377
 ```
 
 ---
 
-## Section 3: Loops & Patterns
-
-### **xi) Fibonacci Series**
-
-📁 **File:** `3-xi_fibonacci_series.c`
+### **[`ii)` Leading and Trailing Zeros](https://github.com/elsesourav/c-problems/blob/main/1-ii_leading_trailing_zeros.c)**
 
 **Question:**  
-Write a C program to generate Fibonacci series up to n terms.
+Write a C program to display numbers with leading zeros and trailing zeros.
 
 **Description:**  
-Fibonacci series: Each number is the sum of the previous two numbers. Series: 0, 1, 1, 2, 3, 5, 8, 13, 21...
+This program demonstrates how to format numbers with leading zeros (padding zeros before the number) and trailing zeros (displaying decimal numbers with specific decimal places).
 
 **How to Solve:**
 
-1. Initialize first two terms: a=0, b=1
-2. Display first two terms
-3. Loop for remaining terms:
-   - Calculate next = a + b
-   - Display next
-   - Update: a = b, b = next
-4. Show both iterative and recursive approaches
+1. For leading zeros with integers:
+   - Use %0nd format specifier where n is the total width
+   - Example: %05d will display number with 5 digits, padding with zeros
+2. For trailing zeros with floating-point numbers:
+   - Use %.nf format specifier where n is decimal places
+   - Example: %.3f will display 3 digits after decimal point
+3. Combine both for complete formatting control
 
-**Example:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-ii_leading_trailing_zeros.c)**
 
+```c
+#include <stdio.h>
+
+int main() {
+   int intNumber;
+   float floatNumber;
+
+   printf("Enter an integer number: ");
+   scanf("%d", &intNumber);
+
+   printf("Enter a floating-point number: ");
+   scanf("%f", &floatNumber);
+
+   printf("\n--- Leading Zeros (Integer) ---\n");
+   printf("Original number:          %d\n", intNumber);
+   printf("With 5 digits (leading):  %05d\n", intNumber);
+   printf("With 8 digits (leading):  %08d\n", intNumber);
+   printf("With 10 digits (leading): %010d\n", intNumber);
+
+   printf("\n--- Trailing Zeros (Float) ---\n");
+   printf("Original number:          %f\n", floatNumber);
+   printf("With 2 decimal places:    %.2f\n", floatNumber);
+   printf("With 4 decimal places:    %.4f\n", floatNumber);
+   printf("With 6 decimal places:    %.6f\n", floatNumber);
+
+   printf("\n--- Combined (Leading + Trailing) ---\n");
+   printf("Width 10, 2 decimals:     %10.2f\n", floatNumber);
+   printf("Width 12, 3 decimals:     %012.3f\n", floatNumber);
+   printf("Width 15, 5 decimals:     %015.5f\n", floatNumber);
+
+   return 0;
+}
 ```
-Input: 10 terms
-Output: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-```
-
----
-
-### **xii) Factorial Calculation**
-
-📁 **File:** `3-xii_factorial.c`
-
-**Question:**  
-Write a C program to calculate factorial of a number.
-
-**Description:**  
-Factorial of n (n!) = n × (n-1) × (n-2) × ... × 1. Shows both iterative and recursive methods.
-
-**How to Solve:**
-
-1. Read number n
-2. **Iterative method:**
-   - Initialize factorial = 1
-   - Loop from 1 to n, multiply each number
-3. **Recursive method:**
-   - Base case: if n=0 or n=1, return 1
-   - Recursive case: return n × factorial(n-1)
-4. Handle large numbers with long long
-
-**Example:**
-
-```
-Input: 5
-Output: 5! = 120
-Calculation: 5 × 4 × 3 × 2 × 1 = 120
-
-Input: 10
-Output: 10! = 3628800
-```
-
----
-
-### **xiii) Sum of Digits**
-
-📁 **File:** `3-xiii_sum_of_digits.c`
-
-**Question:**  
-Write a C program to find the sum of digits of a number.
-
-**Description:**  
-This program extracts each digit and calculates their sum. Also shows digit count and average.
-
-**How to Solve:**
-
-1. Read number
-2. Initialize sum = 0, count = 0
-3. While number > 0:
-   - Extract last digit: digit = num % 10
-   - Add to sum: sum += digit
-   - Remove last digit: num /= 10
-   - Increment count
-4. Display sum, count, average
-
-**Example:**
-
-```
-Input: 12345
-Output:
-Sum of digits: 15 (1+2+3+4+5)
-Number of digits: 5
-Average: 3.00
-```
-
----
-
-### **xiv) GCD and LCM**
-
-📁 **File:** `3-xiv_gcd_lcm.c`
-
-**Question:**  
-Write a C program to find GCD (HCF) and LCM of two numbers.
-
-**Description:**  
-GCD is the greatest common divisor. LCM is the least common multiple. Uses Euclidean algorithm for efficiency.
-
-**How to Solve:**
-
-1. **GCD (Euclidean algorithm):**
-   - While b ≠ 0:
-     - temp = b
-     - b = a % b
-     - a = temp
-   - GCD = a
-2. **LCM formula:**
-   - LCM = (num1 × num2) / GCD
-3. Show step-by-step process
-
-**Example:**
-
-```
-Input: 48, 18
-Output:
-GCD: 6
-LCM: 144
-Steps: 48%18=12, 18%12=6, 12%6=0 → GCD=6
-```
-
----
-
-### **xv) Number Patterns**
-
-📁 **File:** `3-xv_number_patterns.c`
-
-**Question:**  
-Write a C program to print various number patterns.
-
-**Description:**  
-This program generates multiple number patterns including pyramids, triangles, and number sequences.
-
-**How to Solve:**
-
-1. Use nested loops (outer for rows, inner for columns)
-2. **Pattern types:**
-   - Right triangle
-   - Pyramid
-   - Inverted pyramid
-   - Floyd's triangle
-   - Pascal's triangle
-3. Control spaces and numbers with loop variables
-
-**Example Patterns:**
-
-```
-Right Triangle:    Pyramid:        Floyd's Triangle:
-1                    1              1
-1 2                 1 2 1           2 3
-1 2 3              1 2 3 2 1        4 5 6
-1 2 3 4           1 2 3 4 3 2 1     7 8 9 10
-```
-
----
-
-### **xvi) Star Patterns**
-
-📁 **File:** `3-xvi_star_patterns.c`
-
-**Question:**  
-Write a C program to print various star patterns.
-
-**Description:**  
-Generates different star patterns including pyramids, diamonds, and hollow patterns.
-
-**How to Solve:**
-
-1. Use nested loops for rows and columns
-2. Calculate spaces and stars based on row number
-3. **Patterns include:**
-   - Right triangle
-   - Full pyramid
-   - Inverted pyramid
-   - Diamond
-   - Hollow square/pyramid
-4. Use symmetry for complex patterns
-
-**Example Patterns:**
-
-```
-Pyramid:          Diamond:         Hollow Square:
-    *                *             * * * * *
-   ***              ***            *       *
-  *****            *****           *       *
- *******          *******          *       *
-*********          *****           * * * * *
-                    ***
-                     *
-```
-
----
-
-### **xvii) Prime Numbers in Range**
-
-📁 **File:** `3-xvii_prime_range.c`
-
-**Question:**  
-Write a C program to display all prime numbers within a given range.
-
-**Description:**  
-This program finds and displays all prime numbers between two given numbers with count and sum.
-
-**How to Solve:**
-
-1. Input start and end range
-2. For each number in range:
-   - Check if prime (using prime checking algorithm)
-   - If prime, display and count
-3. Calculate sum of all primes
-4. Display statistics
-
-**Example:**
-
-```
-Input: Range 10 to 30
-Output:
-Prime numbers: 11, 13, 17, 19, 23, 29
-Count: 6 primes
-Sum: 112
-```
-
----
-
-### **xviii) Multiplication Table**
-
-📁 **File:** `3-xviii_multiplication_table.c`
-
-**Question:**  
-Write a C program to display multiplication tables.
-
-**Description:**  
-Generates multiplication tables for one or multiple numbers with formatting.
-
-**How to Solve:**
-
-1. Input number or range
-2. Nested loop:
-   - Outer loop: for each number
-   - Inner loop: multiply by 1 to 10
-3. Format output in columns
-4. Option for custom range
-
-**Example:**
-
-```
-Multiplication Table of 5:
-5 × 1 = 5
-5 × 2 = 10
-5 × 3 = 15
-...
-5 × 10 = 50
-```
-
----
-
-### **xix) Number Pyramid Patterns**
-
-📁 **File:** `3-xix_pyramid_patterns.c`
-
-**Question:**  
-Write a C program to print advanced pyramid patterns with numbers.
-
-**Description:**  
-Creates complex number pyramids including palindromic numbers, centered patterns, and special sequences.
-
-**How to Solve:**
-
-1. **Palindrome pyramid:** Numbers increase then decrease
-2. **Number diamond:** Combine upward and downward pyramids
-3. Use spaces for centering
-4. Control number sequences with loop variables
-
-**Example:**
-
-```
-Palindrome Pyramid:
-    1
-   121
-  12321
- 1234321
-123454321
-```
-
----
-
-## Section 4: Arrays, Matrices & Strings
-
-### **xxi) Array Operations**
-
-📁 **File:** `4-xxi_array_operations.c`
-
-**Question:**  
-Write a C program to perform basic operations on arrays.
-
-**Description:**  
-This program demonstrates array input, display, searching, insertion, deletion, and sorting operations.
-
-**How to Solve:**
-
-1. **Input:** Loop to read array elements
-2. **Display:** Loop to print elements
-3. **Search:** Linear search for element
-4. **Insert:** Shift elements and insert at position
-5. **Delete:** Shift elements to fill gap
-6. **Sort:** Bubble sort or selection sort
-7. **Reverse:** Swap elements from ends
-
-**Example:**
-
-```
-Array: [5, 2, 8, 1, 9]
-Operations:
-- Search 8: Found at index 2
-- Insert 6 at position 2: [5, 2, 6, 8, 1, 9]
-- Delete position 4: [5, 2, 6, 8, 9]
-- Sort: [2, 5, 6, 8, 9]
-- Reverse: [9, 8, 6, 5, 2]
-```
-
----
-
-### **xxii) Matrix Operations**
-
-📁 **File:** `4-xxii_matrix_operations.c`
-
-**Question:**  
-Write a C program to perform operations on matrices (addition, subtraction, multiplication).
-
-**Description:**  
-This program handles 2D arrays and performs matrix arithmetic operations with proper validation.
-
-**How to Solve:**
-
-1. **Input matrices:** Nested loop for rows and columns
-2. **Addition/Subtraction:** Element-wise operation (requires same dimensions)
-3. **Multiplication:**
-   - Check if columns of A = rows of B
-   - Result[i][j] = Σ(A[i][k] × B[k][j])
-4. **Transpose:** Swap rows and columns
-5. Display matrices in formatted grid
-
-**Example:**
-
-```
-Matrix A (2×2):     Matrix B (2×2):
-[1  2]              [5  6]
-[3  4]              [7  8]
-
-A + B:              A × B:
-[6   8]             [19  22]
-[10  12]            [43  50]
-```
-
----
-
-### **xxiii) Matrix Transpose**
-
-📁 **File:** `4-xxiii_matrix_transpose.c`
-
-**Question:**  
-Write a C program to find the transpose of a matrix.
-
-**Description:**  
-Transpose converts rows to columns and columns to rows. Shows both in-place and new matrix methods.
-
-**How to Solve:**
-
-1. Input matrix (m×n)
-2. Create transpose matrix (n×m)
-3. For each element at [i][j], place at [j][i] in transpose
-4. Display original and transposed matrix
-5. For square matrices, show in-place transpose
-
-**Key Concepts:**
-
-- Matrix transpose
-- Row-column interchange
-- 2D array manipulation
-- In-place operations
-
-**Example:**
-
-```
-Original (3×2):     Transpose (2×3):
-[1  2]              [1  3  5]
-[3  4]              [2  4  6]
-[5  6]
-```
-
----
-
-### **xxiv) Array Sorting**
-
-📁 **File:** `4-xxiv_array_sorting.c`
-
-**Question:**  
-Write a C program implementing various sorting algorithms.
-
-**Description:**  
-Demonstrates multiple sorting algorithms with step-by-step visualization and performance comparison.
-
-**How to Solve:**
-
-1. **Bubble Sort:** Compare adjacent, swap if needed, repeat
-2. **Selection Sort:** Find minimum, place at beginning
-3. **Insertion Sort:** Insert each element at correct position
-4. Show passes for each algorithm
-5. Count comparisons and swaps
-
-**Key Concepts:**
-
-- Sorting algorithms
-- Algorithm complexity
-- Comparison and swapping
-- Performance analysis
-
-**Example:**
-
-```
-Original: [64, 34, 25, 12, 22]
-
-Bubble Sort Steps:
-Pass 1: [34, 25, 12, 22, 64]
-Pass 2: [25, 12, 22, 34, 64]
-Pass 3: [12, 22, 25, 34, 64]
-Result: [12, 22, 25, 34, 64]
-```
-
----
-
-### **xxv) String Operations**
-
-📁 **File:** `4-xxv_string_operations.c`
-
-**Question:**  
-Write a C program to perform various string operations without using library functions.
-
-**Description:**  
-Implements string operations from scratch: length, copy, concatenate, reverse, compare, palindrome check.
-
-**How to Solve:**
-
-1. **Length:** Count characters until '\0'
-2. **Copy:** Character by character transfer
-3. **Concatenate:** Append second string to first
-4. **Reverse:** Swap characters from ends
-5. **Compare:** Character by character comparison
-6. **Palindrome:** Compare with reversed string
-
-**Key Concepts:**
-
-- String as character array
-- Null terminator '\0'
-- String manipulation
-- Character comparison
-
-**Example:**
-
-```
-String: "Hello"
-Length: 5
-Reverse: "olleH"
-Concatenate with "World": "HelloWorld"
-Compare with "Hello": Equal
-Palindrome check: Not a palindrome
-```
-
----
-
-### **xxvi) String Palindrome**
-
-📁 **File:** `4-xxvi_string_palindrome.c`
-
-**Question:**  
-Write a C program to check if a string is a palindrome (case-insensitive).
-
-**Description:**  
-Checks if string reads same forwards and backwards, ignoring case and spaces.
-
-**How to Solve:**
-
-1. Convert string to lowercase
-2. Remove spaces
-3. Compare characters from both ends
-4. Move towards center
-5. If all match, it's palindrome
-
-**Key Concepts:**
-
-- Case conversion
-- String comparison
-- Two-pointer technique
-- Character manipulation
-
-**Example:**
-
-```
-Input: "Madam"
-Output: PALINDROME (case-insensitive)
-
-Input: "A man a plan a canal Panama"
-Output: PALINDROME (ignoring spaces)
-
-Input: "Hello"
-Output: NOT a palindrome
-```
-
----
-
-### **xxvii) Anagram Check**
-
-📁 **File:** `4-xxvii_anagram_check.c`
-
-**Question:**  
-Write a C program to check if two strings are anagrams.
-
-**Description:**  
-Anagrams are words with same characters in different order. Example: "listen" and "silent".
-
-**How to Solve:**
-
-1. Remove spaces and convert to lowercase
-2. Check if lengths are equal
-3. **Method 1:** Sort both strings and compare
-4. **Method 2:** Count frequency of each character
-5. Compare frequency arrays
-
-**Key Concepts:**
-
-- Character frequency
-- String sorting
-- Comparison logic
-- Array manipulation
-
-**Example:**
-
-```
-Input: "listen", "silent"
-Output: ANAGRAMS
-Character count: l-1, i-1, s-1, t-1, e-1, n-1 (both same)
-
-Input: "hello", "world"
-Output: NOT anagrams
-```
-
----
-
-### **xxviii) Substring Search**
-
-📁 **File:** `4-xxviii_substring_search.c`
-
-**Question:**  
-Write a C program to search for a substring within a string.
-
-**Description:**  
-Finds all occurrences of a pattern string within a text string using pattern matching.
-
-**How to Solve:**
-
-1. Scan through main string
-2. At each position, try to match pattern
-3. Compare character by character
-4. If complete match, record position
-5. Continue searching for multiple occurrences
-6. Show all positions found
-
-**Key Concepts:**
-
-- Pattern matching
-- String searching
-- Index tracking
-- Multiple occurrence handling
-
-**Example:**
-
-```
-Text: "the quick brown fox jumps over the lazy dog"
-Pattern: "the"
-Output:
-Found at position 0: "the"
-Found at position 31: "the"
-Total occurrences: 2
-```
-
----
-
-### **xxix) Word Count in String**
-
-📁 **File:** `4-xxix_word_count.c`
-
-**Question:**  
-Write a C program to count words, characters, vowels, and consonants in a string.
-
-**Description:**  
-Analyzes a string to provide detailed statistics about its composition.
-
-**How to Solve:**
-
-1. **Words:** Count spaces + 1, or count transitions from space to non-space
-2. **Characters:** Count all non-space characters
-3. **Vowels:** Check if character is a, e, i, o, u (case-insensitive)
-4. **Consonants:** Alphabetic characters that are not vowels
-5. **Digits:** Check if character is 0-9
-6. **Special characters:** Non-alphanumeric characters
-
-**Key Concepts:**
-
-- Character classification
-- String parsing
-- Counting logic
-- Character types (ctype.h)
-
-**Example:**
-
-```
-Input: "Hello World 123!"
-Output:
-Words: 2
-Characters: 15
-Vowels: 3 (e, o, o)
-Consonants: 7 (H, l, l, W, r, l, d)
-Digits: 3 (1, 2, 3)
-Spaces: 2
-Special chars: 1 (!)
-```
-
----
-
-### **xxx) String Reversal**
-
-📁 **File:** `4-xxx_string_reversal.c`
-
-**Question:**  
-Write a C program to reverse a string and reverse words in a string.
-
-**Description:**  
-Demonstrates multiple reversal techniques: complete string reversal, word-by-word reversal, and sentence reversal.
-
-**How to Solve:**
-
-1. **Complete reversal:** Swap characters from both ends
-2. **Word reversal:**
-   - Reverse entire string
-   - Reverse each word individually
-3. **Sentence reversal:** Extract words and arrange in reverse order
-4. Handle multiple spaces
-
-**Key Concepts:**
-
-- String manipulation
-- Two-pointer technique
-- Word extraction
-- Multiple reversal methods
-
-**Example:**
-
-```
-Input: "Hello World"
-
-Complete reversal: "dlroW olleH"
-Word-by-word reversal: "olleH dlroW"
-Sentence reversal: "World Hello"
-```
-
----
-
-## Section 5: Functions, Pointers & Structures
-
-### **xxxi) nCr Combination**
-
-📁 **File:** `5-xxxi_nCr_combination.c`
-
-**Question:**  
-Write a C program to calculate nCr (combination) using functions.
-
-**Description:**  
-Calculates combinations using the formula: nCr = n! / (r! × (n-r)!)
-Shows both standard and optimized methods.
-
-**How to Solve:**
-
-1. Create factorial() function
-2. **Method 1:** Use formula directly with factorials
-3. **Method 2:** Optimize by canceling common terms
-4. Validate n ≥ r ≥ 0
-5. Show calculation steps
-
-**Key Concepts:**
-
-- Function creation
-- Factorial calculation
-- Mathematical optimization
-- Parameter passing
-
-**Example:**
-
-```
-Input: n=5, r=2
-Output: 5C2 = 10
-Calculation: 5! / (2! × 3!) = 120 / (2 × 6) = 10
-Combinations: (1,2), (1,3), (1,4), (1,5), (2,3), (2,4), (2,5), (3,4), (3,5), (4,5)
-```
-
----
-
-### **xxxii) Exponential Series**
-
-📁 **File:** `5-xxxii_exponential_series.c`
-
-**Question:**  
-Write a C program to calculate e^x using Taylor series expansion.
-
-**Description:**  
-Calculates exponential function using series: e^x = 1 + x/1! + x²/2! + x³/3! + ...
-
-**How to Solve:**
-
-1. Initialize sum = 1, term = 1
-2. Loop for n terms:
-   - Calculate next term = (previous term × x) / i
-   - Add to sum
-   - Display each term
-3. Compare with math.h exp() function
-4. Show error percentage
-
-**Key Concepts:**
-
-- Series expansion
-- Term calculation
-- Accumulation
-- Accuracy analysis
-
-**Example:**
-
-```
-Input: x=2, terms=10
-Output:
-e^2 = 1 + 2/1! + 4/2! + 8/6! + ...
-    = 1 + 2 + 2 + 1.333 + 0.667 + ...
-    = 7.389
-Actual (math.h): 7.389
-Error: 0.001%
-```
-
----
-
-### **xxxiii) Array Min/Max Swap**
-
-📁 **File:** `5-xxxiii_array_min_max_swap.c`
-
-**Question:**  
-Write a C program using functions to find and swap largest and smallest elements in an array.
-
-**Description:**  
-Uses separate functions to find minimum and maximum elements, then swaps their positions.
-
-**How to Solve:**
-
-1. **findMin() function:** Return index of minimum element
-2. **findMax() function:** Return index of maximum element
-3. **swap() function:** Exchange elements at two indices
-4. Display array before and after swap
-5. Show indices and values
-
-**Key Concepts:**
-
-- Function with array parameters
-- Index tracking
-- Swapping algorithm
-- Modular programming
-
-**Example:**
-
-```
-Original array: [5, 2, 8, 1, 9, 3]
-Minimum: 1 at index 3
-Maximum: 9 at index 4
-
-After swap: [5, 2, 8, 9, 1, 3]
-```
-
----
-
-### **xxxiv) Factorial Recursion**
-
-📁 **File:** `5-xxxiv_factorial_recursion.c`
-
-**Question:**  
-Write a C program to calculate factorial using recursion with visualization.
-
-**Description:**  
-Demonstrates recursive factorial calculation with detailed call stack visualization.
-
-**How to Solve:**
-
-1. **Base case:** if n == 0 or n == 1, return 1
-2. **Recursive case:** return n × factorial(n-1)
-3. Visualize recursion with indentation
-4. Show call stack and return values
-5. Compare with iterative method
-
-**Key Concepts:**
-
-- Recursion
-- Base case and recursive case
-- Call stack
-- Recursion tree visualization
-
-**Example:**
-
-```
-Input: 5
-Recursion trace:
-factorial(5)
-  → 5 × factorial(4)
-    → 4 × factorial(3)
-      → 3 × factorial(2)
-        → 2 × factorial(1)
-          → 1 (base case)
-        ← 2
-      ← 6
-    ← 24
-  ← 120
-Result: 120
-```
-
----
-
-### **xxxv) Call by Value vs Reference**
-
-📁 **File:** `5-xxxv_call_by_value_reference.c`
-
-**Question:**  
-Write a C program to demonstrate call by value and call by reference.
-
-**Description:**  
-Shows the difference between passing values and addresses to functions with three examples: swap, increment, and array modification.
-
-**How to Solve:**
-
-1. **Call by value:**
-   - Pass variable value
-   - Changes don't affect original
-2. **Call by reference:**
-   - Pass variable address using &
-   - Use pointer parameter (\*)
-   - Changes affect original variable
-3. Show side-by-side comparison
-
-**Key Concepts:**
-
-- Function parameters
-- Pointers
-- Address vs value
-- Parameter passing mechanisms
-
-**Example:**
-
-```
-Call by Value (swap):
-Before: a=5, b=10
-In function: a=10, b=5
-After: a=5, b=10 (unchanged)
-
-Call by Reference (swap):
-Before: a=5, b=10
-In function: *x=10, *y=5
-After: a=10, b=5 (changed!)
-```
-
----
-
-### **xxxvi) Array Using Pointers**
-
-📁 **File:** `5-xxxvi_array_using_pointer.c`
-
-**Question:**  
-Write a C program to access array elements using pointers.
-
-**Description:**  
-Demonstrates three methods of accessing arrays with pointers: \*(ptr+i), ptr++, and ptr[i].
-
-**How to Solve:**
-
-1. **Method 1:** \*(ptr + i) - pointer arithmetic
-2. **Method 2:** ptr++ - increment pointer
-3. **Method 3:** ptr[i] - array notation with pointer
-4. Show memory addresses
-5. Demonstrate pointer arithmetic
-6. Calculate sum and average using pointers
-
-**Key Concepts:**
-
-- Pointer arithmetic
-- Array-pointer relationship
-- Dereferencing
-- Memory addresses
-
-**Example:**
-
-```
-Array: [10, 20, 30, 40, 50]
-
-Method 1 - *(ptr+i):
-Address: 0x1000, Value: 10
-Address: 0x1004, Value: 20
-Address: 0x1008, Value: 30
-...
-
-Pointer arithmetic:
-ptr = 0x1000
-ptr+1 = 0x1004 (moved 4 bytes)
-*(ptr+2) = 30
-```
-
----
-
-### **xxxvii) Text Analysis with Pointers**
-
-📁 **File:** `5-xxxvii_text_analysis_pointer.c`
-
-**Question:**  
-Write a C program to analyze multi-line text using character pointers.
-
-**Description:**  
-Reads multi-line text until "END" and analyzes it using pointer operations to count characters, words, lines, and find longest word.
-
-**How to Solve:**
-
-1. Read lines until "END"
-2. Use character pointer to traverse text
-3. Count:
-   - Characters (including spaces)
-   - Words (space-separated)
-   - Lines (newline count)
-4. Find longest word
-5. Character distribution (frequency)
-
-**Key Concepts:**
-
-- Character pointers
-- String traversal
-- Multi-line input
-- Text parsing
 
 **Example:**
 
 ```
 Input:
-Hello World
-This is a test
-END
-
+  Integer: 42
+  Float: 3.14
 Output:
-Characters: 24
-Words: 6
-Lines: 2
-Longest word: "Hello" (5 chars)
-Character distribution:
-a: 1, d: 1, e: 2, H: 1, i: 2, l: 3, ...
+--- Leading Zeros (Integer) ---
+Original number:          42
+With 5 digits (leading):  00042
+With 8 digits (leading):  00000042
+With 10 digits (leading): 0000000042
+
+--- Trailing Zeros (Float) ---
+Original number:          3.140000
+With 2 decimal places:    3.14
+With 4 decimal places:    3.1400
+With 6 decimal places:    3.140000
+
+--- Combined (Leading + Trailing) ---
+Width 10, 2 decimals:           3.14
+Width 12, 3 decimals:     0003.140
+Width 15, 5 decimals:     00003.14000
 ```
 
 ---
 
-### **xxxviii) Time Operations with Structures**
-
-📁 **File:** `5-xxxviii_time_operations.c`
+### **[`iii)` Left and Right Justification](https://github.com/elsesourav/c-problems/blob/main/1-iii_left_right_justification.c)**
 
 **Question:**  
-Write a C program to perform arithmetic operations on time using structures.
+Write a C program to display numbers with left and right justification.
 
 **Description:**  
-Defines a Time structure with hours, minutes, seconds and performs addition and subtraction with carry/borrow handling.
+This program demonstrates text alignment (justification) in C: Right justification (number is aligned to the right - default) and Left justification (number is aligned to the left using minus sign).
 
 **How to Solve:**
 
-1. Define Time structure with h, m, s
-2. **Addition:**
-   - Add seconds, if ≥60, carry to minutes
-   - Add minutes, if ≥60, carry to hours
-   - Add hours, if ≥24, wrap around
-3. **Subtraction:**
-   - Subtract seconds, if <0, borrow from minutes
-   - Subtract minutes, if <0, borrow from hours
-   - Handle negative results
-4. Display in 12-hour and 24-hour formats
+1. For right justification (default):
+   - Use %nd format specifier where n is the field width
+   - Example: %10d will right-align in 10 character width
+2. For left justification:
+   - Use %-nd format specifier (negative sign for left align)
+   - Example: %-10d will left-align in 10 character width
+3. Can combine with precision for floating-point numbers
+4. Use vertical bars (|) to visualize the alignment clearly
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-iii_left_right_justification.c)**
 
-- Structure definition
-- Structure operations
-- Carry and borrow logic
-- Time normalization
+```c
+#include <stdio.h>
+
+int main() {
+   int intNumber;
+   float floatNumber;
+   char text[50];
+
+   printf("Enter an integer number: ");
+   scanf("%d", &intNumber);
+
+   printf("Enter a floating-point number: ");
+   scanf("%f", &floatNumber);
+
+   printf("Enter a text string: ");
+   scanf("%s", text);
+
+   printf("\n--- Right Justification (Default) ---\n");
+   printf("|%15d| (Integer with width 15)\n", intNumber);
+   printf("|%15.2f| (Float with width 15, 2 decimals)\n", floatNumber);
+   printf("|%20s| (String with width 20)\n", text);
+
+   printf("\n--- Left Justification (Using -) ---\n");
+   printf("|%-15d| (Integer with width 15)\n", intNumber);
+   printf("|%-15.2f| (Float with width 15, 2 decimals)\n", floatNumber);
+   printf("|%-20s| (String with width 20)\n", text);
+
+   printf("\n--- Comparison Side by Side ---\n");
+   printf("RIGHT: |%12d| LEFT: |%-12d|\n", intNumber, intNumber);
+   printf("RIGHT: |%12.3f| LEFT: |%-12.3f|\n", floatNumber, floatNumber);
+   printf("RIGHT: |%15s| LEFT: |%-15s|\n", text, text);
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-Time 1: 10:45:30
-Time 2: 02:35:45
+Input:
+  Integer: 12345
+  Float: 67.89
+  String: Hello
+Output:
+--- Right Justification (Default) ---
+|          12345| (Integer with width 15)
+|          67.89| (Float with width 15, 2 decimals)
+|               Hello| (String with width 20)
 
-Addition:
-10:45:30 + 02:35:45 = 13:21:15
-Steps: 30+45=75s → 1m15s
-       45+35+1=81m → 1h21m
-       10+2+1=13h
+--- Left Justification (Using -) ---
+|12345          | (Integer with width 15)
+|67.89          | (Float with width 15, 2 decimals)
+|Hello               | (String with width 20)
 
-Subtraction:
-10:45:30 - 02:35:45 = 08:09:45
+--- Comparison Side by Side ---
+RIGHT: |       12345| LEFT: |12345       |
+RIGHT: |       67.890| LEFT: |67.890      |
+RIGHT: |          Hello| LEFT: |Hello          |
 ```
 
 ---
 
-### **xxxix) Structure Pointers**
-
-📁 **File:** `5-xxxix_structure_pointer.c`
+### **[`iv)` Different Format Specifiers](https://github.com/elsesourav/c-problems/blob/main/1-iv_different_format_specifiers.c)**
 
 **Question:**  
-Write a C program to demonstrate structure pointers and member access.
+Write a C program to demonstrate different formatting specifiers in C.
 
 **Description:**  
-Shows how to access structure members using pointers with three methods: ptr->, (\*ptr)., and struct. Also demonstrates dynamic memory allocation.
+This program showcases various format specifiers available in C's printf() function including integer, floating-point, character, string, and pointer specifiers with special formatting options.
 
 **How to Solve:**
 
-1. Define Student structure
-2. Create structure variable and pointer
-3. **Access methods:**
-   - ptr->member (arrow operator)
-   - (\*ptr).member (dereference then dot)
-   - struct.member (direct access)
-4. Show memory layout
-5. Demonstrate malloc/free
+1. Declare variables of different data types
+2. Use appropriate format specifiers for each type:
+   - %d or %i: signed decimal integer
+   - %u: unsigned decimal integer
+   - %f: floating-point number
+   - %e/%E: scientific notation
+   - %g/%G: shortest representation
+   - %c: character
+   - %s: string
+   - %p: pointer address
+3. Combine specifiers with width, precision, and flags
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-iv_different_format_specifiers.c)**
 
-- Structure pointers
-- Arrow operator (->)
-- Dynamic memory allocation
-- Memory layout
+```c
+#include <stdio.h>
+
+int main() {
+   int decimalNum;
+   unsigned int unsignedNum;
+   long longNum;
+   float floatNum;
+   double doubleNum;
+   char character;
+   char string[100];
+
+   printf("Enter an integer: ");
+   scanf("%d", &decimalNum);
+   printf("Enter an unsigned integer: ");
+   scanf("%u", &unsignedNum);
+   printf("Enter a long integer: ");
+   scanf("%ld", &longNum);
+   printf("Enter a float number: ");
+   scanf("%f", &floatNum);
+   printf("Enter a double number: ");
+   scanf("%lf", &doubleNum);
+   printf("Enter a character: ");
+   scanf(" %c", &character);
+   printf("Enter a string: ");
+   scanf("%s", string);
+
+   printf("\n=== INTEGER FORMAT SPECIFIERS ===\n");
+   printf("%%d (decimal):              %d\n", decimalNum);
+   printf("%%i (integer):              %i\n", decimalNum);
+   printf("%%u (unsigned):             %u\n", unsignedNum);
+   printf("%%ld (long decimal):        %ld\n", longNum);
+   printf("%%5d (width 5):             %5d\n", decimalNum);
+   printf("%%-5d (left-aligned):       %-5d|\n", decimalNum);
+   printf("%%05d (zero-padded):        %05d\n", decimalNum);
+
+   printf("\n=== FLOATING-POINT FORMAT SPECIFIERS ===\n");
+   printf("%%f (float):                %f\n", floatNum);
+   printf("%%lf (double):              %lf\n", doubleNum);
+   printf("%%.2f (2 decimals):         %.2f\n", floatNum);
+   printf("%%.4f (4 decimals):         %.4f\n", doubleNum);
+   printf("%%e (scientific):           %e\n", floatNum);
+   printf("%%E (SCIENTIFIC):           %E\n", doubleNum);
+
+   printf("\n=== CHARACTER & STRING FORMAT SPECIFIERS ===\n");
+   printf("%%c (character):            %c\n", character);
+   printf("%%d (char as ASCII):        %d\n", character);
+   printf("%%s (string):               %s\n", string);
+   printf("%%10s (width 10):           %10s\n", string);
+   printf("%%-10s (left-aligned):      %-10s|\n", string);
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-Student structure:
-Roll: 101
-Name: "Alice"
-Marks: [85, 90, 88]
+Input:
+  Integer: 42
+  Unsigned: 100
+  Long: 999999
+  Float: 3.14159
+  Double: 2.71828
+  Character: A
+  String: Hello
+Output:
+=== INTEGER FORMAT SPECIFIERS ===
+%d (decimal):              42
+%i (integer):              42
+%u (unsigned):             100
+%ld (long decimal):        999999
+%5d (width 5):                42
+%-5d (left-aligned):       42   |
+%05d (zero-padded):        00042
 
-Access methods:
-ptr->roll = 101
-(*ptr).name = "Alice"
-student.marks[0] = 85
-
-Memory layout:
-Address 0x1000: roll (4 bytes)
-Address 0x1004: name (50 bytes)
-Address 0x1036: age (4 bytes)
-...
+=== FLOATING-POINT FORMAT SPECIFIERS ===
+%f (float):                3.141590
+%lf (double):              2.718280
+%.2f (2 decimals):         3.14
+%.4f (4 decimals):         2.7183
+%e (scientific):           3.141590e+00
+%E (SCIENTIFIC):           2.718280E+00
 ```
 
 ---
 
-## Section 6: File Handling
+<div align="center">
 
-### **xl) File Handling Modes**
+## Section `2`: Control Structures
 
-📁 **File:** `6-xl_file_handling_modes.c`
+</div>
+
+### **[`v)` Greatest and Smallest of Three Numbers](https://github.com/elsesourav/c-problems/blob/main/2-v_greatest_smallest_three_numbers.c)**
 
 **Question:**  
-Write a C program for handling unformatted and formatted files in different operational modes.
+Write a C program to find the greatest and smallest of three numbers.
 
 **Description:**  
-Comprehensive demonstration of file I/O operations including formatted (fprintf/fscanf), unformatted (fputc/fgetc, fputs/fgets), binary (fwrite/fread), and all file opening modes.
+This program takes three numbers as input from the user and determines which number is the greatest (maximum) and which is the smallest (minimum) among them using conditional statements.
 
 **How to Solve:**
 
-1. **Formatted I/O:**
-   - fprintf() - write formatted data
-   - fscanf() - read formatted data
-2. **Unformatted Character I/O:**
-   - fputc() - write character
-   - fgetc() - read character
-3. **Unformatted String I/O:**
-   - fputs() - write string
-   - fgets() - read string
-4. **Binary I/O:**
-   - fwrite() - write binary data
-   - fread() - read binary data
-5. **File Modes:**
-   - r, w, a (text)
-   - r+, w+, a+ (read/write)
-   - rb, wb, ab (binary)
+1. Declare three variables to store the input numbers
+2. Read three numbers from the user
+3. Use nested if-else statements or logical operators to compare:
+   - For greatest: Compare each number with others using > operator
+   - For smallest: Compare each number with others using < operator
+4. Alternative approach: Use ternary operator (? :) for compact code
+5. Display the greatest and smallest numbers
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-v_greatest_smallest_three_numbers.c)**
 
-- File pointers
-- File opening modes
-- Formatted vs unformatted I/O
-- Binary file operations
-- Error handling
+```c
+#include <stdio.h>
+
+int main() {
+   float num1, num2, num3;
+   float greatest, smallest;
+
+   printf("Enter three numbers: ");
+   scanf("%f %f %f", &num1, &num2, &num3);
+
+   // Find greatest
+   if (num1 >= num2 && num1 >= num3) {
+      greatest = num1;
+   } else if (num2 >= num1 && num2 >= num3) {
+      greatest = num2;
+   } else {
+      greatest = num3;
+   }
+
+   // Find smallest
+   if (num1 <= num2 && num1 <= num3) {
+      smallest = num1;
+   } else if (num2 <= num1 && num2 <= num3) {
+      smallest = num2;
+   } else {
+      smallest = num3;
+   }
+
+   printf("\n--- Results ---\n");
+   printf("Numbers entered: %.2f, %.2f, %.2f\n", num1, num2, num3);
+   printf("Greatest number: %.2f\n", greatest);
+   printf("Smallest number: %.2f\n", smallest);
+   printf("Difference: %.2f\n", greatest - smallest);
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-Formatted write (fprintf):
-fprintf(fp, "Roll: %d, Name: %s, Marks: %.2f", 101, "Alice", 85.5);
-
-Unformatted write (fputs):
-fputs("Hello World\n", fp);
-
-Binary write (fwrite):
-fwrite(&student, sizeof(Student), 1, fp);
-
-File modes:
-"r"  - Read (file must exist)
-"w"  - Write (creates/overwrites)
-"a"  - Append (creates/appends)
-"r+" - Read/Write (file must exist)
+Input: 25 10 30
+Output:
+--- Results ---
+Numbers entered: 25.00, 10.00, 30.00
+Greatest number: 30.00
+Smallest number: 10.00
+Difference: 20.00
 ```
 
 ---
 
-### **xli) Count Characters and Lines**
-
-📁 **File:** `6-xli_count_chars_lines.c`
+### **[`vi)` Grade Classification](https://github.com/elsesourav/c-problems/blob/main/2-vi_grade_classification.c)**
 
 **Question:**  
-Write a C program to count the number of characters and lines in a file.
+Write a C program to display pass class, second class, or distinction according to the marks entered from the keyboard.
 
 **Description:**  
-Reads a file and provides detailed statistics including total characters, lines, words, alphabets, digits, spaces, and special characters with percentage distribution.
+This program takes marks as input and classifies the result into different categories: Distinction (≥75), First Class (60-74), Second Class (50-59), Pass Class (40-49), or Fail (<40).
 
 **How to Solve:**
 
-1. Open file in read mode
-2. Read character by character using fgetc()
-3. Count:
-   - Total characters (including all)
-   - Lines (count '\n')
-   - Words (transitions from space to non-space)
-   - Alphabets (isalpha())
-   - Digits (isdigit())
-   - Spaces (space and tab)
-   - Special characters
-4. Calculate percentages and averages
-5. Display file content with line numbers
+1. Declare a variable to store marks (integer or float)
+2. Read marks from the user
+3. Validate that marks are in valid range (0-100)
+4. Use if-else ladder to check marks range and classify
+5. Display the appropriate classification message
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-vi_grade_classification.c)**
 
-- Character-by-character reading
-- Character classification
-- Statistical analysis
-- File traversal
+```c
+#include <stdio.h>
+
+int main() {
+   float marks;
+
+   printf("Enter marks obtained (0-100): ");
+   scanf("%f", &marks);
+
+   if (marks < 0 || marks > 100) {
+      printf("\nError: Invalid marks! Marks should be between 0 and 100.\n");
+      return 1;
+   }
+
+   printf("\n--- Result Classification ---\n");
+   printf("Marks obtained: %.2f\n", marks);
+
+   if (marks >= 75) {
+      printf("Grade: DISTINCTION\n");
+      printf("Performance: Excellent! Outstanding achievement.\n");
+   } else if (marks >= 60) {
+      printf("Grade: FIRST CLASS\n");
+      printf("Performance: Very Good! Keep up the good work.\n");
+   } else if (marks >= 50) {
+      printf("Grade: SECOND CLASS\n");
+      printf("Performance: Good! There's room for improvement.\n");
+   } else if (marks >= 40) {
+      printf("Grade: PASS CLASS\n");
+      printf("Performance: Passed! Work harder next time.\n");
+   } else {
+      printf("Grade: FAIL\n");
+      printf("Performance: Failed! Need to study more.\n");
+   }
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-File: sample.txt
-Content:
-1: Hello World!
-2: This is line 2.
-3: Numbers: 123
-
-Statistics:
-Total characters: 45
-Lines: 3
-Words: 7
-Alphabets: 28 (62.2%)
-Digits: 3 (6.7%)
-Spaces: 6 (13.3%)
-Special chars: 5 (11.1%)
-Average chars per line: 15.0
+Input: 85
+Output:
+--- Result Classification ---
+Marks obtained: 85.00
+Grade: DISTINCTION
+Performance: Excellent! Outstanding achievement.
 ```
 
 ---
 
-### **xlii) File Copy Methods**
-
-📁 **File:** `6-xlii_file_copy_methods.c`
+### **[`vii)` Even or Odd Checker](https://github.com/elsesourav/c-problems/blob/main/2-vii_even_odd_checker.c)**
 
 **Question:**  
-Write a C program to copy one file into another by:
-a) Copying one character at a time
-b) Copying multiple characters simultaneously (using fgets/fputs)
+Write a C program to find whether a number is even or odd.
 
 **Description:**  
-Demonstrates two file copying methods with performance comparison and verification.
+This program takes an integer as input and determines whether it is an even number or an odd number. A number is even if it is divisible by 2 (remainder is 0), otherwise it is odd.
 
 **How to Solve:**
 
-1. **Method 1 - Character by character:**
-   - Use fgetc() to read one character
-   - Use fputc() to write one character
-   - Loop until EOF
-   - Count characters copied
-2. **Method 2 - Line by line:**
-   - Use fgets() to read a line (buffer)
-   - Use fputs() to write the line
-   - Loop until NULL
-   - Count lines copied
-3. Measure time for each method
-4. Verify copy by comparing files
-5. Display file sizes
+1. Declare an integer variable to store the number
+2. Read the number from user input
+3. Use modulus operator (%) to find remainder when divided by 2:
+   - If number % 2 == 0, the number is EVEN
+   - If number % 2 != 0, the number is ODD
+4. Use if-else statement to check the condition
+5. Display whether the number is even or odd
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-vii_even_odd_checker.c)**
 
-- File copying
-- fgetc/fputc vs fgets/fputs
-- Performance comparison
-- File verification
-- Time measurement
+```c
+#include <stdio.h>
+
+int main() {
+   int number;
+
+   printf("Enter an integer number: ");
+   scanf("%d", &number);
+
+   printf("\n--- Even/Odd Checker ---\n");
+   printf("Number entered: %d\n", number);
+
+   if (number % 2 == 0) {
+      printf("Result: %d is an EVEN number.\n", number);
+      printf("Explanation: %d is divisible by 2 (remainder = 0)\n", number);
+   } else {
+      printf("Result: %d is an ODD number.\n", number);
+      printf("Explanation: %d is not divisible by 2 (remainder = 1)\n", number);
+   }
+
+   printf("\nMathematical Info:\n");
+   printf("%d ÷ 2 = %d (quotient), remainder = %d\n", number, number / 2, number % 2);
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-Source: source.txt (542 bytes)
+Input: 10
+Output:
+--- Even/Odd Checker ---
+Number entered: 10
+Result: 10 is an EVEN number.
+Explanation: 10 is divisible by 2 (remainder = 0)
 
-Method 1 (Character-by-character):
-Characters copied: 542
-Time taken: 0.000234 seconds
-
-Method 2 (Line-by-line):
-Lines copied: 14
-Characters copied: 542
-Time taken: 0.000156 seconds
-
-Verification: ✓ Files are identical
-
-Comparison:
-Method 1: Works with any file, slower
-Method 2: Faster for text files, efficient
+Mathematical Info:
+10 ÷ 2 = 5 (quotient), remainder = 0
 ```
 
 ---
 
-### **xliii) Student Records File**
-
-📁 **File:** `6-xliii_student_records_file.c`
+### **[`viii)` Number Spelling](https://github.com/elsesourav/c-problems/blob/main/2-viii_number_spelling.c)**
 
 **Question:**  
-Write a C program to write records of students to a file using array of structures and display them accordingly.
+Write a C program to display spellings of numbers 1-10 on entry.
 
 **Description:**  
-Complete student record management system using structures and files. Supports both binary and text file formats with comprehensive display and analysis features.
+This program takes a number (1-10) as input from the user and displays its spelling in words. For example, if user enters 5, it displays "Five". If the number is outside the range 1-10, it shows an error message.
 
 **How to Solve:**
 
-1. Define Student structure:
-   - Roll number, name, age, course
-   - Marks array (3 subjects)
-   - Total, percentage, grade
-2. **Write to binary file:**
-   - fwrite(students, sizeof(Student), count, fp)
-3. **Write to text file:**
-   - fprintf() for each field
-4. **Read from binary file:**
-   - fread(students, sizeof(Student), count, fp)
-5. Display in formatted table
-6. Calculate statistics
-7. Search and sort operations
+1. Declare an integer variable to store the number
+2. Read the number from user input
+3. Use switch-case statement to match the number
+4. Create cases for 1 to 10, each printing the corresponding spelling
+5. Include a default case for invalid input
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-viii_number_spelling.c)**
 
-- Array of structures
-- Binary file I/O
-- Text file I/O
-- Structure file operations
-- Data persistence
+```c
+#include <stdio.h>
+
+int main() {
+   int number;
+
+   printf("Enter a number (1-10): ");
+   scanf("%d", &number);
+
+   printf("\n--- Number to Spelling Converter ---\n");
+   printf("Number entered: %d\n", number);
+   printf("Spelling: ", number);
+
+   switch (number) {
+   case 1:
+      printf("One\n");
+      break;
+   case 2:
+      printf("Two\n");
+      break;
+   case 3:
+      printf("Three\n");
+      break;
+   case 4:
+      printf("Four\n");
+      break;
+   case 5:
+      printf("Five\n");
+      break;
+   case 6:
+      printf("Six\n");
+      break;
+   case 7:
+      printf("Seven\n");
+      break;
+   case 8:
+      printf("Eight\n");
+      break;
+   case 9:
+      printf("Nine\n");
+      break;
+   case 10:
+      printf("Ten\n");
+      break;
+   default:
+      printf("Invalid!\n");
+      printf("\nError: Please enter a number between 1 and 10 only.\n");
+      return 1;
+   }
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-Creating 5 student records...
-
-Writing to files:
-✓ students.dat (binary) - 500 bytes
-✓ students.txt (text) - 850 bytes
-
-Reading from file:
-┌─────┬──────┬──────────────┬─────┬───────┬───────┬───────┬────────┬──────────┬───────┐
-│ No. │ Roll │ Name         │ Age │ Sub-1 │ Sub-2 │ Sub-3 │ Total  │ Percent  │ Grade │
-├─────┼──────┼──────────────┼─────┼───────┼───────┼───────┼────────┼──────────┼───────┤
-│ 1   │ 101  │ Alice        │ 20  │  85.0 │  90.0 │  88.0 │  263.0 │  87.67%  │   B   │
-│ 2   │ 102  │ Bob Smith    │ 21  │  92.0 │  95.0 │  93.0 │  280.0 │  93.33%  │   A   │
-└─────┴──────┴──────────────┴─────┴───────┴───────┴───────┴────────┴──────────┴───────┘
-
-Statistics:
-Average: 85.5%
-Highest: 93.33% (Bob Smith)
-Pass rate: 100%
+Input: 5
+Output:
+--- Number to Spelling Converter ---
+Number entered: 5
+Spelling: Five
 ```
 
 ---
 
-### **xliv) Student Database Menu System**
-
-📁 **File:** `6-xliv_student_database_menu.c`
+### **[`ix)` Calculator Menu](https://github.com/elsesourav/c-problems/blob/main/2-ix_calculator_menu.c)**
 
 **Question:**  
-Write a text menu-driven program to append a record, edit a particular record, display a predefined record, and delete a particular record from a previously created student file.
+Write a C program to implement and display a menu to execute 1. ADD, 2. SUBTRACT, 3. MULTIPLICATION, 4. DIVISION using switch case.
 
 **Description:**  
-Complete Student Database Management System with interactive menu interface supporting all CRUD operations (Create, Read, Update, Delete) with persistent file storage.
+This program creates a simple calculator with a menu-driven interface. It displays a menu with 4 arithmetic operations, user selects an operation, enters two numbers, and the program performs the selected operation using switch-case.
 
 **How to Solve:**
 
-1. **Menu Interface:**
-   - Display menu with 8 options
-   - Use switch-case for selection
-   - Loop until exit
-2. **Add Record:**
-   - Input new student data
-   - Check for duplicate roll number
-   - Append to array and save to file
-3. **Display Records:**
-   - Load all records from file
-   - Display in formatted table
-4. **Search Record:**
-   - Search by roll number
-   - Display if found
-5. **Edit Record:**
-   - Find by roll number
-   - Allow selective field updates
-   - Save changes to file
-6. **Delete Record:**
-   - Find by roll number
-   - Confirm deletion
-   - Shift remaining records
-   - Save to file
-7. **Statistics:**
-   - Calculate average, highest, lowest
-   - Grade distribution
-   - Pass/fail percentage
-8. **Sort Records:**
-   - By roll number, percentage, or name
-   - Display sorted list
+1. Display a menu with operation choices (1-4)
+2. Read user's choice
+3. Read two numbers from the user
+4. Use switch-case statement with choice as the selector
+5. Perform the selected operation and display result
+6. Include error handling for division by zero
 
-**Key Concepts:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-ix_calculator_menu.c)**
 
-- Menu-driven programming
-- CRUD operations
-- File persistence
-- Data validation
-- Interactive user interface
-- Search and sort
-- Statistical analysis
+```c
+#include <stdio.h>
+
+int main() {
+   int choice;
+   float num1, num2, result;
+
+   printf("========================================\n");
+   printf("       CALCULATOR MENU\n");
+   printf("========================================\n");
+   printf("1. ADD\n");
+   printf("2. SUBTRACT\n");
+   printf("3. MULTIPLICATION\n");
+   printf("4. DIVISION\n");
+   printf("========================================\n");
+   printf("Enter your choice (1-4): ");
+   scanf("%d", &choice);
+
+   printf("Enter first number: ");
+   scanf("%f", &num1);
+   printf("Enter second number: ");
+   scanf("%f", &num2);
+
+   printf("\n--- Calculation Result ---\n");
+
+   switch (choice) {
+   case 1:
+      result = num1 + num2;
+      printf("Operation: ADDITION\n");
+      printf("%.2f + %.2f = %.2f\n", num1, num2, result);
+      break;
+   case 2:
+      result = num1 - num2;
+      printf("Operation: SUBTRACTION\n");
+      printf("%.2f - %.2f = %.2f\n", num1, num2, result);
+      break;
+   case 3:
+      result = num1 * num2;
+      printf("Operation: MULTIPLICATION\n");
+      printf("%.2f × %.2f = %.2f\n", num1, num2, result);
+      break;
+   case 4:
+      if (num2 == 0) {
+         printf("Error: Division by zero!\n");
+         return 1;
+      }
+      result = num1 / num2;
+      printf("Operation: DIVISION\n");
+      printf("%.2f ÷ %.2f = %.2f\n", num1, num2, result);
+      break;
+   default:
+      printf("Error: Invalid choice!\n");
+      return 1;
+   }
+
+   return 0;
+}
+```
 
 **Example:**
 
 ```
-╔════════════════════════════════════════════╗
-║   STUDENT DATABASE MANAGEMENT SYSTEM       ║
-╚════════════════════════════════════════════╝
+Input:
+  Choice: 1
+  First number: 25
+  Second number: 15
+Output:
+========================================
+       CALCULATOR MENU
+========================================
+1. ADD
+2. SUBTRACT
+3. MULTIPLICATION
+4. DIVISION
+========================================
+Enter your choice (1-4): 1
 
-✓ Loaded 3 records from database.
-
-╔════════════════════════════════════════════╗
-║              MAIN MENU                     ║
-╠════════════════════════════════════════════╣
-║  1. Add New Student Record                 ║
-║  2. Display All Records                    ║
-║  3. Search Record (by Roll Number)         ║
-║  4. Edit Record                            ║
-║  5. Delete Record                          ║
-║  6. Display Statistics                     ║
-║  7. Sort Records                           ║
-║  8. Exit                                   ║
-╚════════════════════════════════════════════╝
-
-Total Records: 3
-
-Enter your choice: 1
-
-╔════════════════════════════════════════════╗
-║         ADD NEW STUDENT RECORD             ║
-╚════════════════════════════════════════════╝
-
-Enter Roll Number: 104
-Enter Name: David Brown
-Enter Age: 22
-Enter Course: Mathematics
-Enter marks for 3 subjects:
-  Subject 1: 78
-  Subject 2: 82
-  Subject 3: 85
-
-✓ Student record added successfully!
-  Roll Number: 104
-  Name: David Brown
-  Percentage: 81.67%
-  Grade: B
-
-[Selecting option 6 - Statistics]
-
-╔════════════════════════════════════════════╗
-║          CLASS STATISTICS                  ║
-╚════════════════════════════════════════════╝
-
-Total Students: 4
-
---- Performance Summary ---
-Average Percentage: 84.50%
-Highest Score: 93.33% - Bob Smith (Roll: 102)
-Lowest Score: 78.33% - Carol Williams (Roll: 103)
-
---- Grade Distribution ---
-  A (90-100):  1 students (25.0%)
-  B (80-89):   2 students (50.0%)
-  C (70-79):   1 students (25.0%)
-  D (60-69):   0 students (0.0%)
-  E (50-59):   0 students (0.0%)
-  F (0-49):    0 students (0.0%)
-
---- Pass/Fail Statistics ---
-  Passed: 4 students (100.0%)
-  Failed: 0 students (0.0%)
-
-[Selecting option 4 - Edit Record]
-
-╔════════════════════════════════════════════╗
-║           EDIT STUDENT RECORD              ║
-╚════════════════════════════════════════════╝
-
-Enter Roll Number to edit: 103
-
---- Current Details ---
-Roll Number: 103
-Name: Carol Williams
-Age: 19
-Course: Physics
-Marks: 78.0, 82.0, 75.0
-
---- Enter New Details ---
-New Name (press Enter to keep 'Carol Williams'):
-New Age (current: 19, 0 to skip): 20
-New Course (press Enter to keep 'Physics'): Computer Science
-Update marks? (y/n): y
-Enter new marks for 3 subjects:
-  Subject 1: 85
-  Subject 2: 88
-  Subject 3: 82
-
-✓ Record updated successfully!
-
-[Selecting option 5 - Delete Record]
-
-╔════════════════════════════════════════════╗
-║          DELETE STUDENT RECORD             ║
-╚════════════════════════════════════════════╝
-
-Enter Roll Number to delete: 105
-
---- Record to be Deleted ---
-Roll Number: 105
-Name: Emma Davis
-Course: Chemistry
-
-Are you sure you want to delete this record? (y/n): y
-
-✓ Record deleted successfully!
-  Total records now: 3
-
-[Selecting option 7 - Sort Records]
-
-╔════════════════════════════════════════════╗
-║            SORT RECORDS                    ║
-╚════════════════════════════════════════════╝
-
-Sort by:
-1. Roll Number (ascending)
-2. Percentage (descending)
-3. Name (alphabetical)
-
-Enter choice: 2
-
-✓ Records sorted by Percentage (highest first)!
-
-Sorted records:
-┌─────┬──────┬──────────────────────┬─────┬────────────────┬───────┬───────┬───────┬────────┬──────────┬───────┐
-│ No. │ Roll │ Name                 │ Age │ Course         │ Sub-1 │ Sub-2 │ Sub-3 │ Total  │ Percent  │ Grade │
-├─────┼──────┼──────────────────────┼─────┼────────────────┼───────┼───────┼───────┼────────┼──────────┼───────┤
-│ 1   │ 102  │ Bob Smith            │ 21  │ Electronics    │  92.0 │  95.0 │  93.0 │  280.0 │  93.33%  │   A   │
-│ 2   │ 101  │ Alice Johnson        │ 20  │ Computer Sci.  │  85.0 │  90.0 │  88.0 │  263.0 │  87.67%  │   B   │
-│ 3   │ 103  │ Carol Williams       │ 20  │ Computer Sci.  │  85.0 │  88.0 │  82.0 │  255.0 │  85.00%  │   B   │
-└─────┴──────┴──────────────────────┴─────┴────────────────┴───────┴───────┴───────┴────────┴──────────┴───────┘
-
-[Selecting option 8 - Exit]
-
-╔════════════════════════════════════════════╗
-║  Thank you for using Student Database!     ║
-║  All changes saved to file.                ║
-╚════════════════════════════════════════════╝
+--- Calculation Result ---
+Operation: ADDITION
+25.00 + 15.00 = 40.00
 ```
 
 ---
 
-## 📊 Summary Statistics
+### **[`x)` Quadratic Equation Roots](https://github.com/elsesourav/c-problems/blob/main/2-x_quadratic_equation_roots.c)**
 
-### Programs by Section
+**Question:**  
+Write a C program to check whether there exist real roots of a quadratic equation and if they exist, find them.
 
-| Section   | Topic                            | Programs | Files        |
-| --------- | -------------------------------- | -------- | ------------ |
-| 1         | Format Specifiers                | 4        | i - iv       |
-| 2         | Control Structures               | 6        | v - x        |
-| 3         | Loops & Patterns                 | 9        | xi - xix     |
-| 4         | Arrays, Matrices & Strings       | 10       | xxi - xxx    |
-| 5         | Functions, Pointers & Structures | 9        | xxxi - xxxix |
-| 6         | File Handling                    | 5        | xl - xliv    |
-| **Total** |                                  | **43**   | **i - xliv** |
+**Description:**  
+This program solves a quadratic equation of the form ax² + bx + c = 0. It checks if real roots exist by calculating the discriminant (D = b² - 4ac), then finds the roots if they exist using the quadratic formula.
 
-### Concepts Covered
+**How to Solve:**
 
-- ✅ Data types and format specifiers
-- ✅ Input/Output operations
-- ✅ Conditional statements (if-else, switch)
-- ✅ Loops (for, while, do-while)
-- ✅ Pattern printing
-- ✅ Arrays (1D and 2D)
-- ✅ Strings and string manipulation
-- ✅ Functions and recursion
-- ✅ Pointers and pointer arithmetic
-- ✅ Structures and unions
-- ✅ File handling (text and binary)
-- ✅ Searching and sorting algorithms
-- ✅ Mathematical operations
-- ✅ Memory management
+1. Input coefficients a, b, and c from the user
+2. Check if a != 0 (otherwise it's not quadratic)
+3. Calculate discriminant: D = b² - 4ac
+4. Use if-else to check discriminant value:
+   - If D > 0: Two distinct real roots
+   - If D = 0: Two equal real roots
+   - If D < 0: No real roots (complex)
+5. Use sqrt() function from math.h library
 
----
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-x_quadratic_equation_roots.c)**
 
-## 🚀 How to Use This Repository
+```c
+#include <math.h>
+#include <stdio.h>
 
-### Compilation
+int main() {
+   float a, b, c;
+   float discriminant, root1, root2, realPart, imagPart;
 
-Each program can be compiled using GCC:
+   printf("Quadratic Equation: ax² + bx + c = 0\n");
+   printf("========================================\n");
+   printf("Enter coefficient a: ");
+   scanf("%f", &a);
+   printf("Enter coefficient b: ");
+   scanf("%f", &b);
+   printf("Enter coefficient c: ");
+   scanf("%f", &c);
 
-```bash
-gcc filename.c -o output
-./output
+   if (a == 0) {
+      printf("\nError: 'a' cannot be zero for a quadratic equation!\n");
+      return 1;
+   }
+
+   discriminant = (b * b) - (4 * a * c);
+   printf("\nDiscriminant (D) = %.2f\n\n", discriminant);
+
+   if (discriminant > 0) {
+      printf("Nature: Two DISTINCT REAL roots exist\n\n");
+      root1 = (-b + sqrt(discriminant)) / (2 * a);
+      root2 = (-b - sqrt(discriminant)) / (2 * a);
+      printf("Root 1 = %.2f\n", root1);
+      printf("Root 2 = %.2f\n", root2);
+   } else if (discriminant == 0) {
+      printf("Nature: Two EQUAL REAL roots exist\n\n");
+      root1 = -b / (2 * a);
+      printf("Root 1 = Root 2 = %.2f\n", root1);
+   } else {
+      printf("Nature: NO REAL roots exist\n");
+      printf("The equation has COMPLEX roots.\n\n");
+      realPart = -b / (2 * a);
+      imagPart = sqrt(-discriminant) / (2 * a);
+      printf("Root 1 = %.2f + %.2fi\n", realPart, imagPart);
+      printf("Root 2 = %.2f - %.2fi\n", realPart, imagPart);
+   }
+
+   return 0;
+}
 ```
 
-For programs using math.h:
+**Example:**
 
-```bash
-gcc filename.c -o output -lm
-./output
 ```
+Input:
+  a = 1
+  b = -5
+  c = 6
+Output:
+Quadratic Equation: ax² + bx + c = 0
+========================================
+Discriminant (D) = 1.00
 
-### Program Naming Convention
+Nature: Two DISTINCT REAL roots exist
 
-Format: `[section]-[roman_numeral]_description.c`
-
-Examples:
-
-- `1-i_basic_io.c` - Section 1, Program i
-- `3-xv_number_patterns.c` - Section 3, Program xv
-- `6-xliv_student_database_menu.c` - Section 6, Program xliv
-
-### Running Programs
-
-1. Navigate to the directory containing the program
-2. Compile the program
-3. Run the executable
-4. Follow the on-screen prompts
-
----
-
-## 💡 Learning Path
-
-### Beginner Level (Sections 1-2)
-
-Start with basic I/O, data types, and simple control structures. Master:
-
-- printf() and scanf()
-- if-else statements
-- Basic operators
-- Simple calculations
-
-### Intermediate Level (Sections 3-4)
-
-Progress to loops, arrays, and strings. Focus on:
-
-- Pattern printing
-- Array manipulation
-- String operations
-- Algorithm implementation
-
-### Advanced Level (Sections 5-6)
-
-Move to functions, pointers, and file handling. Learn:
-
-- Function design
-- Pointer operations
-- Structure usage
-- File I/O
-- Database management
-
----
-
-## 🎯 Key Features
-
-✨ **Comprehensive Coverage**: All fundamental C programming concepts  
-📝 **Well Documented**: Each program includes detailed comments  
-🔍 **Multiple Examples**: 2-3 input/output examples per program  
-🎨 **Formatted Output**: Professional display with tables and boxes  
-🛡️ **Error Handling**: Robust input validation and error checking  
-📚 **Educational**: Step-by-step solution approaches included  
-💻 **Production Ready**: Clean, compilable code following best practices
-
----
-
-## 📖 Additional Resources
-
-### Header Files Used
-
-- `stdio.h` - Standard Input/Output
-- `stdlib.h` - Standard Library
-- `string.h` - String Operations
-- `ctype.h` - Character Type Functions
-- `math.h` - Mathematical Functions
-- `limits.h` - Implementation-defined Limits
-- `time.h` - Time and Date Functions
-
-### Common Patterns
-
-- Input validation
-- Menu-driven interfaces
-- Table formatting
-- Error handling
-- File operations
-- Memory management
-
----
-
-## 🤝 Contributing
-
-This is a complete educational resource. Each program is:
-
-- Fully functional
-- Well-commented
-- Tested
-- Documented
-
----
-
-## 📜 License
-
-Educational use - Free to use for learning purposes.
-
----
-
-## ✅ Completion Status
-
-All **43 programs** are complete and ready to use!
-
-**Section 1**: ✅ Complete (4/4)  
-**Section 2**: ✅ Complete (6/6)  
-**Section 3**: ✅ Complete (9/9)  
-**Section 4**: ✅ Complete (10/10)  
-**Section 5**: ✅ Complete (9/9)  
-**Section 6**: ✅ Complete (5/5)
-
----
-
-**Happy Coding! 🚀**
-
----
-
-_Last Updated: November 6, 2025_  
-_Total Programs: 43_  
-_Total Sections: 6_  
-_Coverage: Complete C Programming Fundamentals_
+Root 1 = 3.00
+Root 2 = 2.00
+```
