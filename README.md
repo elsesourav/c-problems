@@ -876,7 +876,7 @@ This program demonstrates three different loop structures in C by displaying the
 3. Use a do-while loop that executes at least once
 4. Display the college name in each iteration
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xi_college_name_display.c)**
 
 ```c
 #include <stdio.h>
@@ -957,7 +957,7 @@ This program showcases the usage of break and continue statements in loops throu
 4. Show effects on nested loops
 5. Print clear output explaining each action
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xii_break_continue_demo.c)**
 
 ```c
 #include <stdio.h>
@@ -1086,7 +1086,7 @@ It demonstrates that sometimes mathematical formulas are more efficient than loo
 4. Implement using loops for verification
 5. Compare results from loops vs formulas
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xiii_sum_natural_even_odd.c)**
 
 ```c
 #include <stdio.h>
@@ -1217,7 +1217,7 @@ This program implements:
 3. Calculate LCM using formula: LCM = (original_a × original_b) / GCD
 4. Display step-by-step process
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xiv_gcd_lcm.c)**
 
 ```c
 #include <stdio.h>
@@ -1347,7 +1347,7 @@ This program demonstrates nested loops to create various number patterns. Each p
 6. Pattern 5: Inverted pyramid
 7. Pattern 6: Floyd's triangle with continuous numbering
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xv_number_triangle.c)**
 
 ```c
 #include <stdio.h>
@@ -1508,7 +1508,7 @@ Pascal's Triangle is a triangular array where each number is the sum of the two 
 3. **Method 3**: Running product optimization
 4. Format output with proper spacing for triangle shape
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xvi_pascal_triangle.c)**
 
 ```c
 #include <stdio.h>
@@ -1652,7 +1652,7 @@ This series involves calculating cumulative sums. Each term is the sum of natura
 3. **Method 3**: Use formula S = N×(N+1)×(N+2)/6
 4. Compare efficiency of all methods
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xvii_nested_series_sum.c)**
 
 ```c
 #include <stdio.h>
@@ -1790,7 +1790,7 @@ This program uses an efficient prime checking function to find all primes in a r
 3. Maintain count and sum of primes
 4. Calculate and display statistics
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xviii_prime_numbers_range.c)**
 
 ```c
 #include <stdio.h>
@@ -1928,7 +1928,7 @@ This program searches for Armstrong numbers in the range 100-1000. For 3-digit n
 4. Compare with original number
 5. Display results with verification
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xix_armstrong_numbers.c)**
 
 ```c
 #include <stdio.h>
@@ -2072,7 +2072,7 @@ This program takes an array of numbers as input and finds both the largest (maxi
 5. Count occurrences of largest and smallest
 6. Display results with comprehensive statistics
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxi_array_largest_smallest.c)**
 
 ```c
 #include <stdio.h>
@@ -2240,7 +2240,7 @@ Both algorithms are implemented for ascending and descending order.
 4. **Selection Sort**: Find minimum/maximum from unsorted portion and swap
 5. Display original and sorted arrays
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxii_array_sorting.c)**
 
 ```c
 #include <stdio.h>
@@ -2476,7 +2476,7 @@ A 3×3 matrix looks like:
 4. Calculate and show diagonal elements
 5. Calculate row-wise and column-wise sums
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxiii_matrix_3x3_input_display.c)**
 
 ```c
 #include <stdio.h>
@@ -2646,7 +2646,7 @@ This program performs matrix addition and subtraction operations on two matrices
 5. For Subtraction: Loop through each position and subtract corresponding elements
 6. Display all matrices with proper formatting
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxiv_matrix_addition_subtraction.c)**
 
 ```c
 #include <stdio.h>
@@ -2822,7 +2822,7 @@ If A is m×n and B is n×p, then C will be m×p
    - Inner loop: dot product calculation (k)
 5. Display all matrices with step-by-step calculations
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxv_matrix_multiplication.c)**
 
 ```c
 #include <stdio.h>
@@ -3067,7 +3067,7 @@ The program also counts:
    - Else it's a special character or space
 4. Display all counts with percentage distribution
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxvi_vowels_consonants_counter.c)**
 
 ```c
 #include <ctype.h>
@@ -3253,7 +3253,7 @@ This program demonstrates the implementation of four fundamental string manipula
 3. **strcat()**: Find end of destination string, append source from that point
 4. **strcmp()**: Compare characters one by one, return difference or 0 if equal
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxvii_string_functions_implementation.c)**
 
 ```c
 #include <stdio.h>
@@ -3445,7 +3445,7 @@ The program checks:
    - Compare original with reversed
 4. For case-insensitive check, convert to lowercase first
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxviii_palindrome_checker.c)**
 
 ```c
 #include <ctype.h>
@@ -3662,7 +3662,7 @@ The program handles multiple occurrences and different lengths of old and new st
    - Handle position shifting based on length difference
 4. Count and display number of replacements made
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxix_string_find_replace.c)**
 
 ```c
 #include <stdio.h>
@@ -3912,7 +3912,7 @@ The program handles:
    - Track current character for next iteration
 4. Display original string, abbreviation, and word breakdown
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxx_string_abbreviation.c)**
 
 ```c
 #include <ctype.h>
@@ -4160,7 +4160,7 @@ Examples:
 6. Display the result with detailed calculation steps
 7. Handle edge cases (r=0, r=n, etc.)
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxi_nCr_combination.c)**
 
 ```c
 #include <stdio.h>
@@ -4389,7 +4389,7 @@ The program uses functions to:
 7. Display each term and running sum
 8. Compare with actual e^x value using math.h
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxii_exponential_series.c)**
 
 ```c
 #include <math.h>
@@ -4680,7 +4680,7 @@ The program uses separate functions to:
 8. Display array after swap
 9. Handle edge cases (all same elements, two elements, etc.)
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxiii_array_min_max_swap.c)**
 
 ```c
 #include <stdio.h>
@@ -4930,7 +4930,7 @@ factorial(5) = 5 × factorial(4)
 6. Display result with recursion trace
 7. Handle negative numbers (factorial not defined)
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxiv_factorial_recursion.c)**
 
 ```c
 #include <stdio.h>
@@ -5235,7 +5235,7 @@ Examples demonstrated:
 4. Show how original values are/aren't affected
 5. Compare both methods with clear output
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxv_call_by_value_reference.c)**
 
 ```c
 #include <stdio.h>
@@ -5433,7 +5433,7 @@ The program shows:
 7. Show addresses and values at each position
 8. Demonstrate different pointer access methods
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxvi_array_using_pointer.c)**
 
 ```c
 #include <stdio.h>
@@ -5675,7 +5675,7 @@ Character pointer concepts:
    - Count lines (count newline characters)
 6. Display text and all statistics
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxvii_text_analysis_pointer.c)**
 
 ```c
 #include <ctype.h>
@@ -5951,7 +5951,7 @@ Operations:
    - Normalize time (ensure valid ranges)
 3. Handle edge cases (midnight, noon, negative results)
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxviii_time_operations.c)**
 
 ```c
 #include <stdio.h>
@@ -6288,7 +6288,7 @@ The program creates a Student structure with:
 6. Demonstrate both . and -> operators
 7. Show address and memory layout
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxix_structure_pointer.c)**
 
 ```c
 #include <stdio.h>
@@ -6556,7 +6556,7 @@ _UNFORMATTED (Block-based):_
 4. Handle file operations with error checking
 5. Display file contents after operations
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xl_file_handling_modes.c)**
 
 ```c
 #include <stdio.h>
@@ -7077,7 +7077,7 @@ The program provides detailed statistics about the file content.
 5. Handle file errors (file not found, etc.)
 6. Close file after reading
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xli_count_chars_lines.c)**
 
 ```c
 #include <ctype.h>
@@ -7427,7 +7427,7 @@ The program also:
 5. Close both files
 6. Verify copy by comparing file sizes/content
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xlii_file_copy_methods.c)**
 
 ```c
 #include <stdio.h>
@@ -7724,7 +7724,7 @@ This program demonstrates file handling with structures. It creates student reco
 5. Display records in formatted table
 6. Calculate statistics and display
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xliii_student_records_file.c)**
 
 ```c
 #include <stdio.h>
@@ -7897,7 +7897,7 @@ This is a complete Student Database Management System with menu-driven interface
 7. **DELETE:** Remove from array, shift remaining records, save
 8. Use switch-case for menu selection
 
-**Code:**
+**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xliv_student_database_menu.c)**
 
 ```c
 #include <stdio.h>
