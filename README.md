@@ -21,7 +21,7 @@ A comprehensive collection of 43 C programming exercises covering fundamental to
 
 </div>
 
-### **[`i)` Number Format Display](https://github.com/elsesourav/c-problems/blob/main/1-i_number_format_display.c)**
+### **[`i)` Number Format Display](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-i_number_format_display.c)**
 
 **Question:**  
 Write a C program to display a number in hexadecimal, decimal, and octal formats.
@@ -40,7 +40,7 @@ This program takes an integer input from the user and displays it in three diffe
    - %o for octal
 4. Display the number in all three formats
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-i_number_format_display.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-i_number_format_display.c)**
 
 ```c
 #include <stdio.h>
@@ -86,7 +86,7 @@ Octal with prefix:        0377
 
 ---
 
-### **[`ii)` Leading and Trailing Zeros](https://github.com/elsesourav/c-problems/blob/main/1-ii_leading_trailing_zeros.c)**
+### **[`ii)` Leading and Trailing Zeros](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-ii_leading_trailing_zeros.c)**
 
 **Question:**  
 Write a C program to display numbers with leading zeros and trailing zeros.
@@ -104,7 +104,7 @@ This program demonstrates how to format numbers with leading zeros (padding zero
    - Example: %.3f will display 3 digits after decimal point
 3. Combine both for complete formatting control
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-ii_leading_trailing_zeros.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-ii_leading_trailing_zeros.c)**
 
 ```c
 #include <stdio.h>
@@ -167,7 +167,7 @@ Width 15, 5 decimals:     00003.14000
 
 ---
 
-### **[`iii)` Left and Right Justification](https://github.com/elsesourav/c-problems/blob/main/1-iii_left_right_justification.c)**
+### **[`iii)` Left and Right Justification](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-iii_left_right_justification.c)**
 
 **Question:**  
 Write a C program to display numbers with left and right justification.
@@ -186,7 +186,7 @@ This program demonstrates text alignment (justification) in C: Right justificati
 3. Can combine with precision for floating-point numbers
 4. Use vertical bars (|) to visualize the alignment clearly
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-iii_left_right_justification.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-iii_left_right_justification.c)**
 
 ```c
 #include <stdio.h>
@@ -250,7 +250,7 @@ RIGHT: |          Hello| LEFT: |Hello          |
 
 ---
 
-### **[`iv)` Different Format Specifiers](https://github.com/elsesourav/c-problems/blob/main/1-iv_different_format_specifiers.c)**
+### **[`iv)` Different Format Specifiers](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-iv_different_format_specifiers.c)**
 
 **Question:**  
 Write a C program to demonstrate different formatting specifiers in C.
@@ -272,7 +272,7 @@ This program showcases various format specifiers available in C's printf() funct
    - %p: pointer address
 3. Combine specifiers with width, precision, and flags
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/1-iv_different_format_specifiers.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/1-iv_different_format_specifiers.c)**
 
 ```c
 #include <stdio.h>
@@ -367,7 +367,7 @@ Output:
 
 </div>
 
-### **[`v)` Greatest and Smallest of Three Numbers](https://github.com/elsesourav/c-problems/blob/main/2-v_greatest_smallest_three_numbers.c)**
+### **[`v)` Greatest and Smallest of Three Numbers](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-v_greatest_smallest_three_numbers.c)**
 
 **Question:**  
 Write a C program to find the greatest and smallest of three numbers.
@@ -385,7 +385,7 @@ This program takes three numbers as input from the user and determines which num
 4. Alternative approach: Use ternary operator (? :) for compact code
 5. Display the greatest and smallest numbers
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-v_greatest_smallest_three_numbers.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-v_greatest_smallest_three_numbers.c)**
 
 ```c
 #include <stdio.h>
@@ -439,7 +439,7 @@ Difference: 20.00
 
 ---
 
-### **[`vi)` Grade Classification](https://github.com/elsesourav/c-problems/blob/main/2-vi_grade_classification.c)**
+### **[`vi)` Grade Classification](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-vi_grade_classification.c)**
 
 **Question:**  
 Write a C program to display pass class, second class, or distinction according to the marks entered from the keyboard.
@@ -455,7 +455,7 @@ This program takes marks as input and classifies the result into different categ
 4. Use if-else ladder to check marks range and classify
 5. Display the appropriate classification message
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-vi_grade_classification.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-vi_grade_classification.c)**
 
 ```c
 #include <stdio.h>
@@ -508,7 +508,7 @@ Performance: Excellent! Outstanding achievement.
 
 ---
 
-### **[`vii)` Even or Odd Checker](https://github.com/elsesourav/c-problems/blob/main/2-vii_even_odd_checker.c)**
+### **[`vii)` Even or Odd Checker](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-vii_even_odd_checker.c)**
 
 **Question:**  
 Write a C program to find whether a number is even or odd.
@@ -526,7 +526,7 @@ This program takes an integer as input and determines whether it is an even numb
 4. Use if-else statement to check the condition
 5. Display whether the number is even or odd
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-vii_even_odd_checker.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-vii_even_odd_checker.c)**
 
 ```c
 #include <stdio.h>
@@ -571,7 +571,7 @@ Mathematical Info:
 
 ---
 
-### **[`viii)` Number Spelling](https://github.com/elsesourav/c-problems/blob/main/2-viii_number_spelling.c)**
+### **[`viii)` Number Spelling](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-viii_number_spelling.c)**
 
 **Question:**  
 Write a C program to display spellings of numbers 1-10 on entry.
@@ -587,7 +587,7 @@ This program takes a number (1-10) as input from the user and displays its spell
 4. Create cases for 1 to 10, each printing the corresponding spelling
 5. Include a default case for invalid input
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-viii_number_spelling.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-viii_number_spelling.c)**
 
 ```c
 #include <stdio.h>
@@ -655,7 +655,7 @@ Spelling: Five
 
 ---
 
-### **[`ix)` Calculator Menu](https://github.com/elsesourav/c-problems/blob/main/2-ix_calculator_menu.c)**
+### **[`ix)` Calculator Menu](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-ix_calculator_menu.c)**
 
 **Question:**  
 Write a C program to implement and display a menu to execute 1. ADD, 2. SUBTRACT, 3. MULTIPLICATION, 4. DIVISION using switch case.
@@ -672,7 +672,7 @@ This program creates a simple calculator with a menu-driven interface. It displa
 5. Perform the selected operation and display result
 6. Include error handling for division by zero
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-ix_calculator_menu.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-ix_calculator_menu.c)**
 
 ```c
 #include <stdio.h>
@@ -758,7 +758,7 @@ Operation: ADDITION
 
 ---
 
-### **[`x)` Quadratic Equation Roots](https://github.com/elsesourav/c-problems/blob/main/2-x_quadratic_equation_roots.c)**
+### **[`x)` Quadratic Equation Roots](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-x_quadratic_equation_roots.c)**
 
 **Question:**  
 Write a C program to check whether there exist real roots of a quadratic equation and if they exist, find them.
@@ -777,7 +777,7 @@ This program solves a quadratic equation of the form ax² + bx + c = 0. It check
    - If D < 0: No real roots (complex)
 5. Use sqrt() function from math.h library
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/2-x_quadratic_equation_roots.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-x_quadratic_equation_roots.c)**
 
 ```c
 #include <math.h>
@@ -853,7 +853,7 @@ Root 2 = 2.00
 
 </div>
 
-### **[`xi)` College Name Display](https://github.com/elsesourav/c-problems/blob/main/3-xi_college_name_display.c)**
+### **[`xi)` College Name Display](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xi_college_name_display.c)**
 
 **Question:**
 Write a C program to print your college name 20 times using:
@@ -876,7 +876,7 @@ This program demonstrates three different loop structures in C by displaying the
 3. Use a do-while loop that executes at least once
 4. Display the college name in each iteration
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xi_college_name_display.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xi_college_name_display.c)**
 
 ```c
 #include <stdio.h>
@@ -935,7 +935,7 @@ Output:
 
 ---
 
-### **[`xii)` Break & Continue Demo](https://github.com/elsesourav/c-problems/blob/main/3-xii_break_continue_demo.c)**
+### **[`xii)` Break & Continue Demo](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xii_break_continue_demo.c)**
 
 **Question:**  
 Write a C program to demonstrate the working of `break` and `continue` statements with examples.
@@ -957,7 +957,7 @@ This program showcases the usage of break and continue statements in loops throu
 4. Show effects on nested loops
 5. Print clear output explaining each action
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xii_break_continue_demo.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xii_break_continue_demo.c)**
 
 ```c
 #include <stdio.h>
@@ -1058,7 +1058,7 @@ Row 5: 5 10 [Break at 5*3=15]
 
 ---
 
-### **[`xiii)` Sum of Natural, Even & Odd Numbers](https://github.com/elsesourav/c-problems/blob/main/3-xiii_sum_natural_even_odd.c)**
+### **[`xiii)` Sum of Natural, Even & Odd Numbers](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xiii_sum_natural_even_odd.c)**
 
 **Question:**  
 Write a C program to find the sum of:
@@ -1086,7 +1086,7 @@ It demonstrates that sometimes mathematical formulas are more efficient than loo
 4. Implement using loops for verification
 5. Compare results from loops vs formulas
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xiii_sum_natural_even_odd.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xiii_sum_natural_even_odd.c)**
 
 ```c
 #include <stdio.h>
@@ -1196,7 +1196,7 @@ Sum of Odd numbers = 50² = 2500
 
 ---
 
-### **[`xiv)` GCD & LCM Calculator](https://github.com/elsesourav/c-problems/blob/main/3-xiv_gcd_lcm.c)**
+### **[`xiv)` GCD & LCM Calculator](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xiv_gcd_lcm.c)**
 
 **Question:**  
 Write a C program to find the GCD (Greatest Common Divisor) and LCM (Least Common Multiple) of two numbers using the Euclidean algorithm.
@@ -1217,7 +1217,7 @@ This program implements:
 3. Calculate LCM using formula: LCM = (original_a × original_b) / GCD
 4. Display step-by-step process
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xiv_gcd_lcm.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xiv_gcd_lcm.c)**
 
 ```c
 #include <stdio.h>
@@ -1322,7 +1322,7 @@ LCM(24, 36) = 72
 
 ---
 
-### **[`xv)` Number Triangle Patterns](https://github.com/elsesourav/c-problems/blob/main/3-xv_number_triangle.c)**
+### **[`xv)` Number Triangle Patterns](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xv_number_triangle.c)**
 
 **Question:**  
 Write a C program to print 6 different number triangle patterns:
@@ -1347,7 +1347,7 @@ This program demonstrates nested loops to create various number patterns. Each p
 6. Pattern 5: Inverted pyramid
 7. Pattern 6: Floyd's triangle with continuous numbering
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xv_number_triangle.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xv_number_triangle.c)**
 
 ```c
 #include <stdio.h>
@@ -1489,7 +1489,7 @@ Pattern 6: Floyd's Triangle
 
 ---
 
-### **[`xvi)` Pascal's Triangle](https://github.com/elsesourav/c-problems/blob/main/3-xvi_pascal_triangle.c)**
+### **[`xvi)` Pascal's Triangle](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xvi_pascal_triangle.c)**
 
 **Question:**  
 Write a C program to generate Pascal's Triangle using three different methods:
@@ -1508,7 +1508,7 @@ Pascal's Triangle is a triangular array where each number is the sum of the two 
 3. **Method 3**: Running product optimization
 4. Format output with proper spacing for triangle shape
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xvi_pascal_triangle.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xvi_pascal_triangle.c)**
 
 ```c
 #include <stdio.h>
@@ -1630,7 +1630,7 @@ Output:
 
 ---
 
-### **[`xvii)` Nested Series Sum](https://github.com/elsesourav/c-problems/blob/main/3-xvii_nested_series_sum.c)**
+### **[`xvii)` Nested Series Sum](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xvii_nested_series_sum.c)**
 
 **Question:**  
 Write a C program to find the sum of the series:  
@@ -1652,7 +1652,7 @@ This series involves calculating cumulative sums. Each term is the sum of natura
 3. **Method 3**: Use formula S = N×(N+1)×(N+2)/6
 4. Compare efficiency of all methods
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xvii_nested_series_sum.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xvii_nested_series_sum.c)**
 
 ```c
 #include <stdio.h>
@@ -1767,7 +1767,7 @@ Total Sum = 10×11×12/6 = 220
 
 ---
 
-### **[`xviii)` Prime Numbers in Range](https://github.com/elsesourav/c-problems/blob/main/3-xviii_prime_numbers_range.c)**
+### **[`xviii)` Prime Numbers in Range](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xviii_prime_numbers_range.c)**
 
 **Question:**  
 Write a C program to find and display all prime numbers between two given numbers (start and end). Also display:
@@ -1790,7 +1790,7 @@ This program uses an efficient prime checking function to find all primes in a r
 3. Maintain count and sum of primes
 4. Calculate and display statistics
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xviii_prime_numbers_range.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xviii_prime_numbers_range.c)**
 
 ```c
 #include <stdio.h>
@@ -1908,7 +1908,7 @@ Density: 20.79% of numbers in range are prime
 
 ---
 
-### **[`xix)` Armstrong Numbers (100-1000)](https://github.com/elsesourav/c-problems/blob/main/3-xix_armstrong_numbers.c)**
+### **[`xix)` Armstrong Numbers (100-1000)](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xix_armstrong_numbers.c)**
 
 **Question:**  
 Write a C program to find all Armstrong numbers between 100 and 1000.
@@ -1928,7 +1928,7 @@ This program searches for Armstrong numbers in the range 100-1000. For 3-digit n
 4. Compare with original number
 5. Display results with verification
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/3-xix_armstrong_numbers.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xix_armstrong_numbers.c)**
 
 ```c
 #include <stdio.h>
@@ -2049,7 +2049,7 @@ The Armstrong numbers are: 153, 370, 371, 407
 
 </div>
 
-### **[`xxi)` Array Largest & Smallest](https://github.com/elsesourav/c-problems/blob/main/4-xxi_array_largest_smallest.c)**
+### **[`xxi)` Array Largest & Smallest](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxi_array_largest_smallest.c)**
 
 **Question:**  
 Write a C program to find the largest and smallest numbers from array elements.
@@ -2072,7 +2072,7 @@ This program takes an array of numbers as input and finds both the largest (maxi
 5. Count occurrences of largest and smallest
 6. Display results with comprehensive statistics
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxi_array_largest_smallest.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxi_array_largest_smallest.c)**
 
 ```c
 #include <stdio.h>
@@ -2216,7 +2216,7 @@ Smallest (25) appears at: 3 (1 time)
 
 ---
 
-### **[`xxii)` Array Sorting](https://github.com/elsesourav/c-problems/blob/main/4-xxii_array_sorting.c)**
+### **[`xxii)` Array Sorting](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxii_array_sorting.c)**
 
 **Question:**  
 Write a C program to sort array elements in ascending and descending order.
@@ -2240,7 +2240,7 @@ Both algorithms are implemented for ascending and descending order.
 4. **Selection Sort**: Find minimum/maximum from unsorted portion and swap
 5. Display original and sorted arrays
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxii_array_sorting.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxii_array_sorting.c)**
 
 ```c
 #include <stdio.h>
@@ -2445,7 +2445,7 @@ Descending Order: [ 9 8 5 2 1 ]
 
 ---
 
-### **[`xxiii)` 3×3 Matrix Input & Display](https://github.com/elsesourav/c-problems/blob/main/4-xxiii_matrix_3x3_input_display.c)**
+### **[`xxiii)` 3×3 Matrix Input & Display](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxiii_matrix_3x3_input_display.c)**
 
 **Question:**  
 Write a C program to enter elements for a 3×3 matrix and display them.
@@ -2476,7 +2476,7 @@ A 3×3 matrix looks like:
 4. Calculate and show diagonal elements
 5. Calculate row-wise and column-wise sums
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxiii_matrix_3x3_input_display.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxiii_matrix_3x3_input_display.c)**
 
 ```c
 #include <stdio.h>
@@ -2624,7 +2624,7 @@ Column 2: 18
 
 ---
 
-### **[`xxiv)` Matrix Addition & Subtraction](https://github.com/elsesourav/c-problems/blob/main/4-xxiv_matrix_addition_subtraction.c)**
+### **[`xxiv)` Matrix Addition & Subtraction](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxiv_matrix_addition_subtraction.c)**
 
 **Question:**  
 Write a C program to calculate addition and subtraction of 2-dimensional matrices.
@@ -2646,7 +2646,7 @@ This program performs matrix addition and subtraction operations on two matrices
 5. For Subtraction: Loop through each position and subtract corresponding elements
 6. Display all matrices with proper formatting
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxiv_matrix_addition_subtraction.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxiv_matrix_addition_subtraction.c)**
 
 ```c
 #include <stdio.h>
@@ -2797,7 +2797,7 @@ Subtraction: A[0][0] - B[0][0] = 1 - 5 = -4
 
 ---
 
-### **[`xxv)` Matrix Multiplication](https://github.com/elsesourav/c-problems/blob/main/4-xxv_matrix_multiplication.c)**
+### **[`xxv)` Matrix Multiplication](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxv_matrix_multiplication.c)**
 
 **Question:**  
 Write a C program to calculate multiplication of 2-dimensional matrices.
@@ -2822,7 +2822,7 @@ If A is m×n and B is n×p, then C will be m×p
    - Inner loop: dot product calculation (k)
 5. Display all matrices with step-by-step calculations
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxv_matrix_multiplication.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxv_matrix_multiplication.c)**
 
 ```c
 #include <stdio.h>
@@ -3040,7 +3040,7 @@ For A(m×n) × B(n×p):
 
 ---
 
-### **[`xxvi)` Vowels & Consonants Counter](https://github.com/elsesourav/c-problems/blob/main/4-xxvi_vowels_consonants_counter.c)**
+### **[`xxvi)` Vowels & Consonants Counter](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxvi_vowels_consonants_counter.c)**
 
 **Question:**  
 Write a C program to find the number of vowels and consonants in a string.
@@ -3067,7 +3067,7 @@ The program also counts:
    - Else it's a special character or space
 4. Display all counts with percentage distribution
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxvi_vowels_consonants_counter.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxvi_vowels_consonants_counter.c)**
 
 ```c
 #include <ctype.h>
@@ -3233,7 +3233,7 @@ Special:      4.55%
 
 ---
 
-### **[`xxvii)` String Functions Implementation](https://github.com/elsesourav/c-problems/blob/main/4-xxvii_string_functions_implementation.c)**
+### **[`xxvii)` String Functions Implementation](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxvii_string_functions_implementation.c)**
 
 **Question:**  
 Write a C program to implement strlen(), strcpy(), strcat(), and strcmp() functions.
@@ -3253,7 +3253,7 @@ This program demonstrates the implementation of four fundamental string manipula
 3. **strcat()**: Find end of destination string, append source from that point
 4. **strcmp()**: Compare characters one by one, return difference or 0 if equal
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxvii_string_functions_implementation.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxvii_string_functions_implementation.c)**
 
 ```c
 #include <stdio.h>
@@ -3418,7 +3418,7 @@ Interpretation: "apple" comes BEFORE "banana"
 
 ---
 
-### **[`xxviii)` Palindrome Checker](https://github.com/elsesourav/c-problems/blob/main/4-xxviii_palindrome_checker.c)**
+### **[`xxviii)` Palindrome Checker](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxviii_palindrome_checker.c)**
 
 **Question:**  
 Write a C program to check whether a string is palindrome or not.
@@ -3445,7 +3445,7 @@ The program checks:
    - Compare original with reversed
 4. For case-insensitive check, convert to lowercase first
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxviii_palindrome_checker.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxviii_palindrome_checker.c)**
 
 ```c
 #include <ctype.h>
@@ -3636,7 +3636,7 @@ Match:      ✗   ✗   ✓   ✗   ✗
 
 ---
 
-### **[`xxix)` String Find & Replace](https://github.com/elsesourav/c-problems/blob/main/4-xxix_string_find_replace.c)**
+### **[`xxix)` String Find & Replace](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxix_string_find_replace.c)**
 
 **Question:**  
 Write a C program to replace a specific character/string by another character/string in a multiword string.
@@ -3662,7 +3662,7 @@ The program handles multiple occurrences and different lengths of old and new st
    - Handle position shifting based on length difference
 4. Count and display number of replacements made
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxix_string_find_replace.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxix_string_find_replace.c)**
 
 ```c
 #include <stdio.h>
@@ -3884,7 +3884,7 @@ Replacements:    3
 
 ---
 
-### **[`xxx)` String Abbreviation](https://github.com/elsesourav/c-problems/blob/main/4-xxx_string_abbreviation.c)**
+### **[`xxx)` String Abbreviation](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxx_string_abbreviation.c)**
 
 **Question:**  
 Write a C program to make the abbreviated form of a multiword string.
@@ -3912,7 +3912,7 @@ The program handles:
    - Track current character for next iteration
 4. Display original string, abbreviation, and word breakdown
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/4-xxx_string_abbreviation.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxx_string_abbreviation.c)**
 
 ```c
 #include <ctype.h>
@@ -4127,7 +4127,7 @@ Compression ratio: 88.5%
 
 </div>
 
-### **[`xxxi)` nCr Combination Calculator](https://github.com/elsesourav/c-problems/blob/main/5-xxxi_nCr_combination.c)**
+### **[`xxxi)` nCr Combination Calculator](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxi_nCr_combination.c)**
 
 **Question:**  
 Write a C program to calculate the value of nCr, where n ≥ r using function.
@@ -4160,7 +4160,7 @@ Examples:
 6. Display the result with detailed calculation steps
 7. Handle edge cases (r=0, r=n, etc.)
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxi_nCr_combination.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxi_nCr_combination.c)**
 
 ```c
 #include <stdio.h>
@@ -4354,7 +4354,7 @@ Property: 5C2 = 5C3 = 10
 
 ---
 
-### **[`xxxii)` Exponential Series Calculator](https://github.com/elsesourav/c-problems/blob/main/5-xxxii_exponential_series.c)**
+### **[`xxxii)` Exponential Series Calculator](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxii_exponential_series.c)**
 
 **Question:**  
 Write a C program to find the sum of the series: 1 + (x/1!) + (x²/2!) + … + (xⁿ/n!) for n ≥ 1, x ≥ 0 using function.
@@ -4389,7 +4389,7 @@ The program uses functions to:
 7. Display each term and running sum
 8. Compare with actual e^x value using math.h
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxii_exponential_series.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxii_exponential_series.c)**
 
 ```c
 #include <math.h>
@@ -4647,7 +4647,7 @@ Accuracy achieved: 99.940577%
 
 ---
 
-### **[`xxxiii)` Array Min-Max Interchange](https://github.com/elsesourav/c-problems/blob/main/5-xxxiii_array_min_max_swap.c)**
+### **[`xxxiii)` Array Min-Max Interchange](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxiii_array_min_max_swap.c)**
 
 **Question:**  
 Write a C program to interchange the biggest and smallest number in a one dimensional array using function.
@@ -4680,7 +4680,7 @@ The program uses separate functions to:
 8. Display array after swap
 9. Handle edge cases (all same elements, two elements, etc.)
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxiii_array_min_max_swap.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxiii_array_min_max_swap.c)**
 
 ```c
 #include <stdio.h>
@@ -4890,7 +4890,7 @@ Result: Successfully swapped!
 
 ---
 
-### **[`xxxiv)` Factorial Using Recursion](https://github.com/elsesourav/c-problems/blob/main/5-xxxiv_factorial_recursion.c)**
+### **[`xxxiv)` Factorial Using Recursion](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxiv_factorial_recursion.c)**
 
 **Question:**  
 Write a C program to calculate factorial of any given number using recursion.
@@ -4930,7 +4930,7 @@ factorial(5) = 5 × factorial(4)
 6. Display result with recursion trace
 7. Handle negative numbers (factorial not defined)
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxiv_factorial_recursion.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxiv_factorial_recursion.c)**
 
 ```c
 #include <stdio.h>
@@ -5201,7 +5201,7 @@ Recursion depth: 5 levels
 
 ---
 
-### **[`xxxv)` Call by Value vs Call by Reference](https://github.com/elsesourav/c-problems/blob/main/5-xxxv_call_by_value_reference.c)**
+### **[`xxxv)` Call by Value vs Call by Reference](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxv_call_by_value_reference.c)**
 
 **Question:**  
 Write a C program to demonstrate call by reference and call by value.
@@ -5235,7 +5235,7 @@ Examples demonstrated:
 4. Show how original values are/aren't affected
 5. Compare both methods with clear output
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxv_call_by_value_reference.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxv_call_by_value_reference.c)**
 
 ```c
 #include <stdio.h>
@@ -5402,7 +5402,7 @@ After calling swapByReference():  num1 = 20, num2 = 10
 
 ---
 
-### **[`xxxvi)` Array Using Pointer](https://github.com/elsesourav/c-problems/blob/main/5-xxxvi_array_using_pointer.c)**
+### **[`xxxvi)` Array Using Pointer](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxvi_array_using_pointer.c)**
 
 **Question:**  
 Write a C program to read and display an integer array using pointer.
@@ -5433,7 +5433,7 @@ The program shows:
 7. Show addresses and values at each position
 8. Demonstrate different pointer access methods
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxvi_array_using_pointer.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxvi_array_using_pointer.c)**
 
 ```c
 #include <stdio.h>
@@ -5643,7 +5643,7 @@ Pointer used: Successfully!
 
 ---
 
-### **[`xxxvii)` Text Analysis Using Pointer](https://github.com/elsesourav/c-problems/blob/main/5-xxxvii_text_analysis_pointer.c)**
+### **[`xxxvii)` Text Analysis Using Pointer](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxvii_text_analysis_pointer.c)**
 
 **Question:**  
 Write a C program to read and display a text using a character pointer to a string. Also count the number of characters, words and lines in the text.
@@ -5675,7 +5675,7 @@ Character pointer concepts:
    - Count lines (count newline characters)
 6. Display text and all statistics
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxvii_text_analysis_pointer.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxvii_text_analysis_pointer.c)**
 
 ```c
 #include <ctype.h>
@@ -5919,7 +5919,7 @@ Memory used:      45 bytes
 
 ---
 
-### **[`xxxviii)` Time Operations](https://github.com/elsesourav/c-problems/blob/main/5-xxxviii_time_operations.c)**
+### **[`xxxviii)` Time Operations](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxviii_time_operations.c)**
 
 **Question:**  
 Write a C program to read, display, add and subtract two times defined using hour, minutes and values of seconds.
@@ -5951,7 +5951,7 @@ Operations:
    - Normalize time (ensure valid ranges)
 3. Handle edge cases (midnight, noon, negative results)
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxviii_time_operations.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxviii_time_operations.c)**
 
 ```c
 #include <stdio.h>
@@ -6252,7 +6252,7 @@ Difference:   05:05:15
 
 ---
 
-### **[`xxxix)` Structure Pointer](https://github.com/elsesourav/c-problems/blob/main/5-xxxix_structure_pointer.c)**
+### **[`xxxix)` Structure Pointer](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxix_structure_pointer.c)**
 
 **Question:**  
 Write a C program to read and display the contents of a structure variable using pointer to a structure.
@@ -6288,7 +6288,7 @@ The program creates a Student structure with:
 6. Demonstrate both . and -> operators
 7. Show address and memory layout
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/5-xxxix_structure_pointer.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxix_structure_pointer.c)**
 
 ```c
 #include <stdio.h>
@@ -6510,7 +6510,7 @@ Advantages of Structure Pointers:
 
 </div>
 
-### **[`xl)` File Handling Modes](https://github.com/elsesourav/c-problems/blob/main/6-xl_file_handling_modes.c)**
+### **[`xl)` File Handling Modes](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xl_file_handling_modes.c)**
 
 **Question:** Write a C program for handling unformatted and formatted files in different operational modes.
 
@@ -6556,7 +6556,7 @@ _UNFORMATTED (Block-based):_
 4. Handle file operations with error checking
 5. Display file contents after operations
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xl_file_handling_modes.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xl_file_handling_modes.c)**
 
 ```c
 #include <stdio.h>
@@ -7048,7 +7048,7 @@ Files created in this demonstration:
 
 ---
 
-### **[`xli)` Count Characters and Lines](https://github.com/elsesourav/c-problems/blob/main/6-xli_count_chars_lines.c)**
+### **[`xli)` Count Characters and Lines](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xli_count_chars_lines.c)**
 
 **Question:** Write a C program to count the number of characters and number of lines in a file.
 
@@ -7077,7 +7077,7 @@ The program provides detailed statistics about the file content.
 5. Handle file errors (file not found, etc.)
 6. Close file after reading
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xli_count_chars_lines.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xli_count_chars_lines.c)**
 
 ```c
 #include <ctype.h>
@@ -7385,7 +7385,7 @@ Analysis complete!
 
 ---
 
-### **[`xlii)` File Copy Methods](https://github.com/elsesourav/c-problems/blob/main/6-xlii_file_copy_methods.c)**
+### **[`xlii)` File Copy Methods](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xlii_file_copy_methods.c)**
 
 **Question:** Write a C program to copy one file into another by:
 
@@ -7427,7 +7427,7 @@ The program also:
 5. Close both files
 6. Verify copy by comparing file sizes/content
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xlii_file_copy_methods.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xlii_file_copy_methods.c)**
 
 ```c
 #include <stdio.h>
@@ -7699,7 +7699,7 @@ Method Comparison:
 
 ---
 
-### **[`xliii)` Student Records File](https://github.com/elsesourav/c-problems/blob/main/6-xliii_student_records_file.c)**
+### **[`xliii)` Student Records File](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xliii_student_records_file.c)**
 
 **Question:** Write a C program to write records of students to a file using array of structures and display them accordingly.
 
@@ -7724,7 +7724,7 @@ This program demonstrates file handling with structures. It creates student reco
 5. Display records in formatted table
 6. Calculate statistics and display
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xliii_student_records_file.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xliii_student_records_file.c)**
 
 ```c
 #include <stdio.h>
@@ -7855,7 +7855,7 @@ int main() {
 
 ---
 
-### **[`xliv)` Student Database Menu](https://github.com/elsesourav/c-problems/blob/main/6-xliv_student_database_menu.c)**
+### **[`xliv)` Student Database Menu](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xliv_student_database_menu.c)**
 
 **Question:** Write a text menu-driven program to:
 
@@ -7897,7 +7897,7 @@ This is a complete Student Database Management System with menu-driven interface
 7. **DELETE:** Remove from array, shift remaining records, save
 8. Use switch-case for menu selection
 
-**[Code:](https://github.com/elsesourav/c-problems/blob/main/6-xliv_student_database_menu.c)**
+**[Code:](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xliv_student_database_menu.c)**
 
 ```c
 #include <stdio.h>

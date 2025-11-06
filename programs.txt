@@ -1,0 +1,70 @@
+**List of Problems**
+
+**01**
+i) Displaying hexadecimal, decimal, octal number format of the entered numbers.
+ii) Displaying entered number with leading zeros and trailing zeros.
+iii) Displaying entered number with right and left justification.
+iv) Displaying with different formatting specifiers.
+
+---
+
+**02**
+v) To find greatest / smallest of three numbers.
+vi) To display pass class, second-class, distinction according to the marks entered from the keyboard.
+vii) To find even or odd numbers.
+viii) To display spellings of number 1–10 on entry.
+ix) Implementation and displaying the menu to execute
+ 1. ADD, 2. SUBTRACT, 3. MULTIPLICATION, 4. DIVISION using switch case.
+x) To check whether there exist real roots of a quadratic equation and if exist find them.
+
+---
+
+**03**
+xi) To display our College name twenty times on screen.
+xii) To demonstrate Continue and Break statements within loop structure.
+xiii) To add first ‘n’ natural, even, odd numbers using different loop structures.
+xiv) To find GCD, LCM of two integral numbers.
+xv) To generate simple number triangle for n rows.
+xvi) To generate Pascal triangle for n rows.
+xvii) To add the series 1 + (1 + 2) + (1 + 2 + 3) + … + (1 +2 +3 + …+n).
+xviii) To generate all prime numbers within the given range.
+xix) To find all the Armstrong numbers within 100 to 1000.
+
+---
+
+**04**
+xxi) To find the largest and smallest numbers from array elements.
+xxii) *To sort array elements in ascending / descending order.
+xxiii) To enter elements for 3×3 matrix and display them.
+xxiv) To calculate addition / subtraction of 2 dimensional matrix.
+xxv) *To calculate multiplication of 2 dimensional matrix.
+xxvi) To find the number of vowels and consonants in a string.
+xxvii) Implementation of strlen(), strcpy(), strcat() and strcmp() functions.
+xxviii) To check whether a string is palindrome or not.
+xxix) *To replace a specific character/string by another character/string in a multiword string.
+xxx) *To make the abbreviated form of a multiword string.
+
+---
+
+**05**
+xxxi) To calculate the value of nCr, n ≥ r using function.
+xxxii) *To find the sum of the series
+ 1 + (x/1!) + (x²/2!) + … + (xⁿ/n!) for n ≥ 1, x ≥ 0 using function.
+xxxiii) To interchange the biggest and smallest number in a one dimensional array using function.
+xxxiv) To calculate factorial of any given number using recursion.
+xxxv) To demonstrate call by reference, call by value.
+xxxvi) To read and display an integer array using pointer.
+xxxvii) To read and display a text using a character pointer to a string. Also count the number of characters, words and lines in the text.
+xxxviii) *To read, display, add and subtract of two times defined using hour, minutes and values of seconds.
+xxxix) *To read and display the contents of a structure variable using pointer to a structure.
+
+---
+
+**06**
+xl) Handling with unformatted, formatted files in different operational mode.
+xli) To count the number characters and number of lines in a file.
+xlii) To copy one file into another by copying one character at a time / multiple characters simultaneously (using fgets() and fputs()).
+xliii) To write records of student to a file using array of structure and display them accordingly.
+xliv) *A text menu driven program to append a record, to edit a particular record, to display a predefined record, to delete a particular record from a previously created student file.
+
+
