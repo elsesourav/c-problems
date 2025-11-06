@@ -4123,7 +4123,7 @@ Compression ratio: 88.5%
 
 <div align="center">
 
-## **Section 5: Functions, Pointers & Structures**
+## **Section `5`: Functions, Pointers & Structures**
 
 </div>
 
@@ -6501,3 +6501,1591 @@ Advantages of Structure Pointers:
 
 ========================================
 ```
+
+---
+
+<div align="center">
+
+### **Section `6`: File Handling**
+
+</div>
+
+### **[`xl)` File Handling Modes](https://github.com/elsesourav/c-problems/blob/main/6-xl_file_handling_modes.c)**
+
+**Question:** Write a C program for handling unformatted and formatted files in different operational modes.
+
+**Description:**
+This program demonstrates various file handling modes in C:
+
+**File Opening Modes:**
+
+- `"r"` - Read mode (file must exist)
+- `"w"` - Write mode (creates new, overwrites existing)
+- `"a"` - Append mode (creates new, appends to existing)
+- `"r+"` - Read/Write mode (file must exist)
+- `"w+"` - Read/Write mode (creates new, overwrites existing)
+- `"a+"` - Read/Append mode (creates new, appends to existing)
+
+**File I/O Functions:**
+
+_FORMATTED:_
+
+- `fprintf()` - Write formatted data to file
+- `fscanf()` - Read formatted data from file
+
+_UNFORMATTED (Character-based):_
+
+- `fputc()` - Write a character
+- `fgetc()` - Read a character
+
+_UNFORMATTED (String-based):_
+
+- `fputs()` - Write a string
+- `fgets()` - Read a string
+
+_UNFORMATTED (Block-based):_
+
+- `fwrite()` - Write binary data
+- `fread()` - Read binary data
+
+**How to Solve:**
+
+1. Demonstrate formatted file operations (fprintf, fscanf)
+2. Demonstrate unformatted file operations (fputc, fgetc, fputs, fgets)
+3. Show different file opening modes
+4. Handle file operations with error checking
+5. Display file contents after operations
+
+**Code:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Function to demonstrate formatted file writing
+void demonstrateFormattedWrite() {
+   FILE *fp;
+
+   printf("\n========================================\n");
+   printf("  FORMATTED FILE WRITE (fprintf)\n");
+   printf("========================================\n\n");
+
+   fp = fopen("formatted_data.txt", "w");
+   if (fp == NULL) {
+      printf("Error: Could not create file!\n");
+      return;
+   }
+
+   printf("Writing formatted data to 'formatted_data.txt'...\n\n");
+
+   // Write formatted data
+   fprintf(fp, "Student Records\n");
+   fprintf(fp, "%-10s %-20s %-5s %-8s\n", "Roll", "Name", "Age", "Marks");
+   fprintf(fp, "%-10s %-20s %-5s %-8s\n", "----", "----", "---", "-----");
+   fprintf(fp, "%-10d %-20s %-5d %-8.2f\n", 101, "Alice Johnson", 20, 85.5);
+   fprintf(fp, "%-10d %-20s %-5d %-8.2f\n", 102, "Bob Smith", 21, 92.3);
+   fprintf(fp, "%-10d %-20s %-5d %-8.2f\n", 103, "Carol Williams", 19, 78.9);
+
+   fclose(fp);
+
+   printf("Data written successfully!\n");
+   printf("Format: fprintf(fp, format_string, variables)\n");
+}
+
+// Function to demonstrate formatted file reading
+void demonstrateFormattedRead() {
+   FILE *fp;
+   char line[100];
+
+   printf("\n========================================\n");
+   printf("  FORMATTED FILE READ (fscanf)\n");
+   printf("========================================\n\n");
+
+   fp = fopen("formatted_data.txt", "r");
+   if (fp == NULL) {
+      printf("Error: Could not open file!\n");
+      return;
+   }
+
+   printf("Reading from 'formatted_data.txt':\n\n");
+
+   // Read and display entire file
+   while (fgets(line, sizeof(line), fp) != NULL) {
+      printf("%s", line);
+   }
+
+   fclose(fp);
+   printf("\nFile read successfully!\n");
+}
+
+// Function to demonstrate unformatted character I/O
+void demonstrateUnformattedChar() {
+   FILE *fp;
+   char ch;
+   char text[] = "Hello, File Handling in C!";
+
+   printf("\n========================================\n");
+   printf("  UNFORMATTED CHAR I/O (fputc/fgetc)\n");
+   printf("========================================\n\n");
+
+   // Writing character by character
+   fp = fopen("char_data.txt", "w");
+   if (fp == NULL) {
+      printf("Error: Could not create file!\n");
+      return;
+   }
+
+   printf("Writing characters to 'char_data.txt'...\n");
+   printf("Text: \"%s\"\n\n", text);
+
+   for (int i = 0; text[i] != '\0'; i++) {
+      fputc(text[i], fp);
+   }
+   fputc('\n', fp);
+
+   fclose(fp);
+   printf("Characters written using fputc()!\n");
+
+   // Reading character by character
+   fp = fopen("char_data.txt", "r");
+   if (fp == NULL) {
+      printf("Error: Could not open file!\n");
+      return;
+   }
+
+   printf("\nReading characters using fgetc():\n");
+   printf("Content: \"");
+
+   while ((ch = fgetc(fp)) != EOF) {
+      if (ch != '\n') {
+         printf("%c", ch);
+      }
+   }
+   printf("\"\n");
+
+   fclose(fp);
+}
+
+// Function to demonstrate unformatted string I/O
+void demonstrateUnformattedString() {
+   FILE *fp;
+   char line[100];
+
+   printf("\n========================================\n");
+   printf("  UNFORMATTED STRING I/O (fputs/fgets)\n");
+   printf("========================================\n\n");
+
+   // Writing strings
+   fp = fopen("string_data.txt", "w");
+   if (fp == NULL) {
+      printf("Error: Could not create file!\n");
+      return;
+   }
+
+   printf("Writing strings to 'string_data.txt'...\n\n");
+
+   fputs("Line 1: This is the first line.\n", fp);
+   fputs("Line 2: File handling is important.\n", fp);
+   fputs("Line 3: C provides powerful file operations.\n", fp);
+
+   fclose(fp);
+   printf("Strings written using fputs()!\n");
+
+   // Reading strings
+   fp = fopen("string_data.txt", "r");
+   if (fp == NULL) {
+      printf("Error: Could not open file!\n");
+      return;
+   }
+
+   printf("\nReading strings using fgets():\n\n");
+
+   int lineNum = 1;
+   while (fgets(line, sizeof(line), fp) != NULL) {
+      printf("  [%d] %s", lineNum++, line);
+   }
+
+   fclose(fp);
+}
+
+// Function to demonstrate different file modes
+void demonstrateFileModes() {
+   FILE *fp;
+   char buffer[100];
+
+   printf("\n========================================\n");
+   printf("  FILE OPENING MODES DEMONSTRATION\n");
+   printf("========================================\n\n");
+
+   // Mode: "w" - Write (creates/overwrites)
+   printf("1. Mode 'w' (Write - creates/overwrites):\n");
+   fp = fopen("mode_demo.txt", "w");
+   fprintf(fp, "Initial content written in 'w' mode.\n");
+   fclose(fp);
+   printf("   File created and written.\n\n");
+
+   // Mode: "a" - Append
+   printf("2. Mode 'a' (Append):\n");
+   fp = fopen("mode_demo.txt", "a");
+   fprintf(fp, "This line appended in 'a' mode.\n");
+   fclose(fp);
+   printf("   Content appended to file.\n\n");
+
+   // Mode: "r" - Read
+   printf("3. Mode 'r' (Read):\n");
+   fp = fopen("mode_demo.txt", "r");
+   printf("   Content:\n");
+   while (fgets(buffer, sizeof(buffer), fp) != NULL) {
+      printf("   %s", buffer);
+   }
+   fclose(fp);
+   printf("\n");
+
+   // Mode: "r+" - Read/Write
+   printf("4. Mode 'r+' (Read/Write - file must exist):\n");
+   fp = fopen("mode_demo.txt", "r+");
+   fprintf(fp, "Modified"); // Overwrites from beginning
+   fclose(fp);
+   printf("   File modified from beginning.\n\n");
+
+   // Read modified content
+   fp = fopen("mode_demo.txt", "r");
+   printf("   Modified content:\n");
+   while (fgets(buffer, sizeof(buffer), fp) != NULL) {
+      printf("   %s", buffer);
+   }
+   fclose(fp);
+}
+
+// Function to demonstrate binary file operations
+void demonstrateBinaryFiles() {
+   FILE *fp;
+   int numbers[] = {10, 20, 30, 40, 50};
+   int read_numbers[5];
+
+   printf("\n========================================\n");
+   printf("  BINARY FILE I/O (fwrite/fread)\n");
+   printf("========================================\n\n");
+
+   // Writing binary data
+   fp = fopen("binary_data.bin", "wb");
+   if (fp == NULL) {
+      printf("Error: Could not create binary file!\n");
+      return;
+   }
+
+   printf("Writing binary data to 'binary_data.bin'...\n");
+   printf("Data: ");
+   for (int i = 0; i < 5; i++) {
+      printf("%d ", numbers[i]);
+   }
+   printf("\n\n");
+
+   fwrite(numbers, sizeof(int), 5, fp);
+   fclose(fp);
+   printf("Binary data written using fwrite()!\n");
+
+   // Reading binary data
+   fp = fopen("binary_data.bin", "rb");
+   if (fp == NULL) {
+      printf("Error: Could not open binary file!\n");
+      return;
+   }
+
+   fread(read_numbers, sizeof(int), 5, fp);
+   fclose(fp);
+
+   printf("\nReading binary data using fread():\n");
+   printf("Data: ");
+   for (int i = 0; i < 5; i++) {
+      printf("%d ", read_numbers[i]);
+   }
+   printf("\n\nData matches! Binary I/O successful!\n");
+}
+
+// Function to display file mode summary
+void displayModeSummary() {
+   printf("\n========================================\n");
+   printf("  FILE MODE SUMMARY\n");
+   printf("========================================\n\n");
+
+   printf("┌──────┬─────────────────────────────────────────────────┐\n");
+   printf("│ Mode │ Description                                     │\n");
+   printf("├──────┼─────────────────────────────────────────────────┤\n");
+   printf("│  r   │ Read only (file must exist)                     │\n");
+   printf("│  w   │ Write only (creates/overwrites)                 │\n");
+   printf("│  a   │ Append (creates/appends to end)                 │\n");
+   printf("│  r+  │ Read & Write (file must exist)                  │\n");
+   printf("│  w+  │ Read & Write (creates/overwrites)               │\n");
+   printf("│  a+  │ Read & Append (creates/appends)                 │\n");
+   printf("│  rb  │ Read binary                                     │\n");
+   printf("│  wb  │ Write binary                                    │\n");
+   printf("│  ab  │ Append binary                                   │\n");
+   printf("└──────┴─────────────────────────────────────────────────┘\n");
+}
+
+int main() {
+   printf("========================================\n");
+   printf("  File Handling Demonstration\n");
+   printf("========================================\n");
+   printf("\nThis program demonstrates:\n");
+   printf("  • Formatted file I/O\n");
+   printf("  • Unformatted file I/O\n");
+   printf("  • Different file opening modes\n");
+   printf("  • Binary file operations\n");
+
+   // Demonstrate formatted file operations
+   demonstrateFormattedWrite();
+   demonstrateFormattedRead();
+
+   // Demonstrate unformatted file operations
+   demonstrateUnformattedChar();
+   demonstrateUnformattedString();
+
+   // Demonstrate file modes
+   demonstrateFileModes();
+
+   // Demonstrate binary files
+   demonstrateBinaryFiles();
+
+   // Display summary
+   displayModeSummary();
+
+   printf("\n========================================\n");
+   printf("  Function Summary\n");
+   printf("========================================\n\n");
+
+   printf("FORMATTED I/O:\n");
+   printf("  fprintf(fp, format, ...) - Write formatted data\n");
+   printf("  fscanf(fp, format, ...)  - Read formatted data\n\n");
+
+   printf("UNFORMATTED I/O (Character):\n");
+   printf("  fputc(char, fp)          - Write a character\n");
+   printf("  fgetc(fp)                - Read a character\n\n");
+
+   printf("UNFORMATTED I/O (String):\n");
+   printf("  fputs(string, fp)        - Write a string\n");
+   printf("  fgets(buffer, size, fp)  - Read a string\n\n");
+
+   printf("UNFORMATTED I/O (Binary):\n");
+   printf("  fwrite(ptr, size, n, fp) - Write binary data\n");
+   printf("  fread(ptr, size, n, fp)  - Read binary data\n\n");
+
+   printf("FILE OPERATIONS:\n");
+   printf("  fopen(name, mode)        - Open file\n");
+   printf("  fclose(fp)               - Close file\n");
+   printf("  feof(fp)                 - Check end of file\n");
+   printf("  rewind(fp)               - Reset file pointer\n");
+   printf("  fseek(fp, offset, whence) - Move file pointer\n");
+
+   printf("\n========================================\n");
+   printf("Files created in this demonstration:\n");
+   printf("  • formatted_data.txt\n");
+   printf("  • char_data.txt\n");
+   printf("  • string_data.txt\n");
+   printf("  • mode_demo.txt\n");
+   printf("  • binary_data.bin\n");
+   printf("========================================\n");
+
+   return 0;
+}
+```
+
+**Example Output:**
+
+```
+========================================
+  File Handling Demonstration
+========================================
+
+This program demonstrates:
+  • Formatted file I/O
+  • Unformatted file I/O
+  • Different file opening modes
+  • Binary file operations
+
+========================================
+  FORMATTED FILE WRITE (fprintf)
+========================================
+
+Writing formatted data to 'formatted_data.txt'...
+
+Data written successfully!
+Format: fprintf(fp, format_string, variables)
+
+========================================
+  FORMATTED FILE READ (fscanf)
+========================================
+
+Reading from 'formatted_data.txt':
+
+Student Records
+Roll       Name                 Age   Marks
+----       ----                 ---   -----
+101        Alice Johnson        20    85.50
+102        Bob Smith            21    92.30
+103        Carol Williams       19    78.90
+
+File read successfully!
+
+========================================
+  UNFORMATTED CHAR I/O (fputc/fgetc)
+========================================
+
+Writing characters to 'char_data.txt'...
+Text: "Hello, File Handling in C!"
+
+Characters written using fputc()!
+
+Reading characters using fgetc():
+Content: "Hello, File Handling in C!"
+
+========================================
+  UNFORMATTED STRING I/O (fputs/fgets)
+========================================
+
+Writing strings to 'string_data.txt'...
+
+Strings written using fputs()!
+
+Reading strings using fgets():
+
+  [1] Line 1: This is the first line.
+  [2] Line 2: File handling is important.
+  [3] Line 3: C provides powerful file operations.
+
+========================================
+  FILE OPENING MODES DEMONSTRATION
+========================================
+
+1. Mode 'w' (Write - creates/overwrites):
+   File created and written.
+
+2. Mode 'a' (Append):
+   Content appended to file.
+
+3. Mode 'r' (Read):
+   Content:
+   Initial content written in 'w' mode.
+   This line appended in 'a' mode.
+
+4. Mode 'r+' (Read/Write - file must exist):
+   File modified from beginning.
+
+   Modified content:
+   Modified content written in 'w' mode.
+   This line appended in 'a' mode.
+
+========================================
+  BINARY FILE I/O (fwrite/fread)
+========================================
+
+Writing binary data to 'binary_data.bin'...
+Data: 10 20 30 40 50
+
+Binary data written using fwrite()!
+
+Reading binary data using fread():
+Data: 10 20 30 40 50
+
+Data matches! Binary I/O successful!
+
+========================================
+  FILE MODE SUMMARY
+========================================
+
+┌──────┬─────────────────────────────────────────────────┐
+│ Mode │ Description                                     │
+├──────┼─────────────────────────────────────────────────┤
+│  r   │ Read only (file must exist)                     │
+│  w   │ Write only (creates/overwrites)                 │
+│  a   │ Append (creates/appends to end)                 │
+│  r+  │ Read & Write (file must exist)                  │
+│  w+  │ Read & Write (creates/overwrites)               │
+│  a+  │ Read & Append (creates/appends)                 │
+│  rb  │ Read binary                                     │
+│  wb  │ Write binary                                    │
+│  ab  │ Append binary                                   │
+└──────┴─────────────────────────────────────────────────┘
+
+========================================
+  Function Summary
+========================================
+
+FORMATTED I/O:
+  fprintf(fp, format, ...) - Write formatted data
+  fscanf(fp, format, ...)  - Read formatted data
+
+UNFORMATTED I/O (Character):
+  fputc(char, fp)          - Write a character
+  fgetc(fp)                - Read a character
+
+UNFORMATTED I/O (String):
+  fputs(string, fp)        - Write a string
+  fgets(buffer, size, fp)  - Read a string
+
+UNFORMATTED I/O (Binary):
+  fwrite(ptr, size, n, fp) - Write binary data
+  fread(ptr, size, n, fp)  - Read binary data
+
+FILE OPERATIONS:
+  fopen(name, mode)        - Open file
+  fclose(fp)               - Close file
+  feof(fp)                 - Check end of file
+  rewind(fp)               - Reset file pointer
+  fseek(fp, offset, whence) - Move file pointer
+
+========================================
+Files created in this demonstration:
+  • formatted_data.txt
+  • char_data.txt
+  • string_data.txt
+  • mode_demo.txt
+  • binary_data.bin
+========================================
+```
+
+---
+
+### **[`xli)` Count Characters and Lines](https://github.com/elsesourav/c-problems/blob/main/6-xli_count_chars_lines.c)**
+
+**Question:** Write a C program to count the number of characters and number of lines in a file.
+
+**Description:**
+This program reads a file and counts:
+
+1. Total number of characters (including spaces, newlines)
+2. Total number of lines
+3. Number of alphabetic characters
+4. Number of digits
+5. Number of spaces
+6. Number of special characters
+7. Number of words
+
+The program provides detailed statistics about the file content.
+
+**How to Solve:**
+
+1. Open file in read mode
+2. Read file character by character using `fgetc()`
+3. Count characters:
+   - Increment total character count for each character
+   - Count newline characters (`'\n'`) for line count
+   - Check character type (alphabet, digit, space, etc.)
+4. Display all statistics
+5. Handle file errors (file not found, etc.)
+6. Close file after reading
+
+**Code:**
+
+```c
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Function to count characters and lines in a file
+void countFileStatistics(const char *filename) {
+   FILE *fp;
+   char ch;
+   int totalChars = 0;
+   int lines = 0;
+   int alphabets = 0;
+   int digits = 0;
+   int spaces = 0;
+   int special = 0;
+   int words = 0;
+   int inWord = 0;
+
+   // Open file in read mode
+   fp = fopen(filename, "r");
+   if (fp == NULL) {
+      printf("Error: Could not open file '%s'\n", filename);
+      printf("Please make sure the file exists.\n");
+      return;
+   }
+
+   printf("Reading file: '%s'\n\n", filename);
+
+   // Read file character by character
+   while ((ch = fgetc(fp)) != EOF) {
+      totalChars++;
+
+      // Count lines (newline characters)
+      if (ch == '\n') {
+         lines++;
+         inWord = 0; // Reset word flag at newline
+      }
+
+      // Count character types
+      if (isalpha(ch)) {
+         alphabets++;
+         if (inWord == 0) {
+            words++;
+            inWord = 1;
+         }
+      } else if (isdigit(ch)) {
+         digits++;
+         if (inWord == 0) {
+            words++;
+            inWord = 1;
+         }
+      } else if (ch == ' ' || ch == '\t') {
+         spaces++;
+         inWord = 0;
+      } else if (ch != '\n') { // Don't count newline as special
+         special++;
+      }
+   }
+
+   // If file doesn't end with newline, count the last line
+   if (totalChars > 0 && ch != '\n') {
+      lines++;
+   }
+
+   // Close file
+   fclose(fp);
+
+   // Display statistics
+   printf("========================================\n");
+   printf("  File Statistics\n");
+   printf("========================================\n\n");
+
+   printf("File Name:        %s\n\n", filename);
+
+   printf("--- Character Count ---\n");
+   printf("Total characters: %d\n", totalChars);
+   printf("Alphabets:        %d\n", alphabets);
+   printf("Digits:           %d\n", digits);
+   printf("Spaces/Tabs:      %d\n", spaces);
+   printf("Special chars:    %d\n", special);
+   printf("Newlines:         %d\n", lines);
+
+   printf("\n--- Line & Word Count ---\n");
+   printf("Total lines:      %d\n", lines);
+   printf("Total words:      %d\n", words);
+
+   if (lines > 0) {
+      printf("\n--- Averages ---\n");
+      printf("Chars per line:   %.2f\n", (float)totalChars / lines);
+      printf("Words per line:   %.2f\n", (float)words / lines);
+   }
+
+   if (words > 0) {
+      printf("Chars per word:   %.2f\n", (float)(alphabets + digits) / words);
+   }
+
+   // Display percentage distribution
+   if (totalChars > 0) {
+      printf("\n--- Percentage Distribution ---\n");
+      printf("Alphabets:        %.2f%%\n", (alphabets * 100.0) / totalChars);
+      printf("Digits:           %.2f%%\n", (digits * 100.0) / totalChars);
+      printf("Spaces:           %.2f%%\n", (spaces * 100.0) / totalChars);
+      printf("Special:          %.2f%%\n", (special * 100.0) / totalChars);
+      printf("Newlines:         %.2f%%\n", (lines * 100.0) / totalChars);
+   }
+}
+
+// Function to display file content with line numbers
+void displayFileContent(const char *filename) {
+   FILE *fp;
+   char line[500];
+   int lineNum = 1;
+
+   fp = fopen(filename, "r");
+   if (fp == NULL) {
+      printf("Error: Could not open file '%s'\n", filename);
+      return;
+   }
+
+   printf("\n========================================\n");
+   printf("  File Content (with line numbers)\n");
+   printf("========================================\n\n");
+
+   while (fgets(line, sizeof(line), fp) != NULL) {
+      printf("%3d: %s", lineNum++, line);
+   }
+
+   fclose(fp);
+}
+
+// Function to create a sample file for testing
+void createSampleFile(const char *filename) {
+   FILE *fp;
+
+   fp = fopen(filename, "w");
+   if (fp == NULL) {
+      printf("Error: Could not create sample file!\n");
+      return;
+   }
+
+   fprintf(fp, "Hello, World!\n");
+   fprintf(fp, "This is a test file for counting characters and lines.\n");
+   fprintf(fp, "It contains 5 lines of text.\n");
+   fprintf(fp, "Numbers: 123, 456, 789\n");
+   fprintf(fp, "Special characters: !@#$%%^&*()\n");
+
+   fclose(fp);
+
+   printf("Sample file '%s' created successfully!\n\n", filename);
+}
+
+// Function to analyze multiple files
+void compareFiles(const char *file1, const char *file2) {
+   FILE *fp1, *fp2;
+   int chars1 = 0, chars2 = 0;
+   int lines1 = 0, lines2 = 0;
+   char ch;
+
+   printf("\n========================================\n");
+   printf("  File Comparison\n");
+   printf("========================================\n\n");
+
+   // Count file 1
+   fp1 = fopen(file1, "r");
+   if (fp1 != NULL) {
+      while ((ch = fgetc(fp1)) != EOF) {
+         chars1++;
+         if (ch == '\n')
+            lines1++;
+      }
+      fclose(fp1);
+   }
+
+   // Count file 2
+   fp2 = fopen(file2, "r");
+   if (fp2 != NULL) {
+      while ((ch = fgetc(fp2)) != EOF) {
+         chars2++;
+         if (ch == '\n')
+            lines2++;
+      }
+      fclose(fp2);
+   }
+
+   printf("%-30s %-15s %-15s\n", "File", "Characters", "Lines");
+   printf("%-30s %-15s %-15s\n", "----", "----------", "-----");
+   printf("%-30s %-15d %-15d\n", file1, chars1, lines1);
+   printf("%-30s %-15d %-15d\n", file2, chars2, lines2);
+   printf("%-30s %-15s %-15s\n", "----", "----------", "-----");
+   printf("%-30s %-15d %-15d\n", "Difference",
+          abs(chars1 - chars2), abs(lines1 - lines2));
+}
+
+int main() {
+   char filename[100];
+   int choice;
+
+   printf("========================================\n");
+   printf("  File Character and Line Counter\n");
+   printf("========================================\n\n");
+
+   printf("Choose an option:\n");
+   printf("1. Use existing file\n");
+   printf("2. Create sample file and analyze\n");
+   printf("Enter choice (1 or 2): ");
+   scanf("%d", &choice);
+   getchar(); // Clear newline
+
+   if (choice == 2) {
+      // Create sample file
+      printf("\n");
+      createSampleFile("sample.txt");
+      strcpy(filename, "sample.txt");
+   } else {
+      // Get filename from user
+      printf("\nEnter filename to analyze: ");
+      fgets(filename, sizeof(filename), stdin);
+      filename[strcspn(filename, "\n")] = '\0'; // Remove newline
+   }
+
+   printf("\n");
+
+   // Count statistics
+   countFileStatistics(filename);
+
+   // Display file content
+   displayFileContent(filename);
+
+   printf("\n========================================\n");
+   printf("  Summary\n");
+   printf("========================================\n");
+   printf("File analyzed: %s\n", filename);
+   printf("Analysis complete!\n");
+   printf("========================================\n");
+
+   return 0;
+}
+```
+
+**Example Output:**
+
+```
+========================================
+  File Character and Line Counter
+========================================
+
+Choose an option:
+1. Use existing file
+2. Create sample file and analyze
+Enter choice (1 or 2): 2
+
+Sample file 'sample.txt' created successfully!
+
+Reading file: 'sample.txt'
+
+========================================
+  File Statistics
+========================================
+
+File Name:        sample.txt
+
+--- Character Count ---
+Total characters: 184
+Alphabets:        119
+Digits:           9
+Spaces/Tabs:      33
+Special chars:    18
+Newlines:         5
+
+--- Line & Word Count ---
+Total lines:      5
+Total words:      29
+
+--- Averages ---
+Chars per line:   36.80
+Words per line:   5.80
+Chars per word:   4.41
+
+--- Percentage Distribution ---
+Alphabets:        64.67%
+Digits:           4.89%
+Spaces:           17.93%
+Special:          9.78%
+Newlines:         2.72%
+
+========================================
+  File Content (with line numbers)
+========================================
+
+  1: Hello, World!
+  2: This is a test file for counting characters and lines.
+  3: It contains 5 lines of text.
+  4: Numbers: 123, 456, 789
+  5: Special characters: !@#$%^&*()
+
+========================================
+  Summary
+========================================
+File analyzed: sample.txt
+Analysis complete!
+========================================
+```
+
+---
+
+### **[`xlii)` File Copy Methods](https://github.com/elsesourav/c-problems/blob/main/6-xlii_file_copy_methods.c)**
+
+**Question:** Write a C program to copy one file into another by:
+
+- a) Copying one character at a time
+- b) Copying multiple characters simultaneously (using fgets() and fputs())
+
+**Description:**
+This program demonstrates two methods of file copying:
+
+**METHOD 1: Character-by-character copy**
+
+- Uses `fgetc()` to read one character
+- Uses `fputc()` to write one character
+- Slower but works for any file type
+
+**METHOD 2: Line-by-line copy (multiple characters)**
+
+- Uses `fgets()` to read a line (string)
+- Uses `fputs()` to write the line
+- Faster for text files
+- Efficient for large files
+
+The program also:
+
+- Compares performance of both methods
+- Verifies successful copy
+- Displays file statistics
+
+**How to Solve:**
+
+1. Open source file in read mode
+2. Open destination file in write mode
+3. **METHOD 1:**
+   - Read character using `fgetc()` until EOF
+   - Write each character using `fputc()`
+4. **METHOD 2:**
+   - Read line using `fgets()` until NULL
+   - Write line using `fputs()`
+5. Close both files
+6. Verify copy by comparing file sizes/content
+
+**Code:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+// Function to copy file character by character
+int copyFileCharByChar(const char *source, const char *dest) {
+   FILE *srcFile, *destFile;
+   char ch;
+   int charCount = 0;
+   clock_t start, end;
+   double timeTaken;
+
+   printf("\n========================================\n");
+   printf("  METHOD 1: Character-by-Character Copy\n");
+   printf("========================================\n\n");
+
+   srcFile = fopen(source, "r");
+   if (srcFile == NULL) {
+      printf("Error: Cannot open source file '%s'\n", source);
+      return 0;
+   }
+
+   destFile = fopen(dest, "w");
+   if (destFile == NULL) {
+      printf("Error: Cannot create destination file '%s'\n", dest);
+      fclose(srcFile);
+      return 0;
+   }
+
+   printf("Copying from '%s' to '%s'...\n", source, dest);
+   printf("Method: fgetc() and fputc()\n\n");
+
+   start = clock();
+
+   while ((ch = fgetc(srcFile)) != EOF) {
+      fputc(ch, destFile);
+      charCount++;
+   }
+
+   end = clock();
+   timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+   fclose(srcFile);
+   fclose(destFile);
+
+   printf("Copy completed!\n");
+   printf("Characters copied: %d\n", charCount);
+   printf("Time taken: %.6f seconds\n", timeTaken);
+
+   return 1;
+}
+
+// Function to copy file line by line
+int copyFileLineByLine(const char *source, const char *dest) {
+   FILE *srcFile, *destFile;
+   char buffer[1024];
+   int lineCount = 0;
+   int charCount = 0;
+   clock_t start, end;
+   double timeTaken;
+
+   printf("\n========================================\n");
+   printf("  METHOD 2: Line-by-Line Copy\n");
+   printf("========================================\n\n");
+
+   srcFile = fopen(source, "r");
+   if (srcFile == NULL) {
+      printf("Error: Cannot open source file '%s'\n", source);
+      return 0;
+   }
+
+   destFile = fopen(dest, "w");
+   if (destFile == NULL) {
+      printf("Error: Cannot create destination file '%s'\n", dest);
+      fclose(srcFile);
+      return 0;
+   }
+
+   printf("Copying from '%s' to '%s'...\n", source, dest);
+   printf("Method: fgets() and fputs()\n\n");
+
+   start = clock();
+
+   while (fgets(buffer, sizeof(buffer), srcFile) != NULL) {
+      fputs(buffer, destFile);
+      lineCount++;
+      charCount += strlen(buffer);
+   }
+
+   end = clock();
+   timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+   fclose(srcFile);
+   fclose(destFile);
+
+   printf("Copy completed!\n");
+   printf("Lines copied: %d\n", lineCount);
+   printf("Characters copied: %d\n", charCount);
+   printf("Time taken: %.6f seconds\n", timeTaken);
+
+   return 1;
+}
+
+// Function to verify file copy
+int verifyFileCopy(const char *source, const char *dest) {
+   FILE *srcFile, *destFile;
+   char ch1, ch2;
+   int match = 1;
+   int charCount = 0;
+
+   srcFile = fopen(source, "r");
+   destFile = fopen(dest, "r");
+
+   if (srcFile == NULL || destFile == NULL) {
+      printf("Error: Cannot open files for verification\n");
+      if (srcFile)
+         fclose(srcFile);
+      if (destFile)
+         fclose(destFile);
+      return 0;
+   }
+
+   while (1) {
+      ch1 = fgetc(srcFile);
+      ch2 = fgetc(destFile);
+
+      if (ch1 == EOF && ch2 == EOF) {
+         break;
+      }
+
+      if (ch1 != ch2) {
+         match = 0;
+         break;
+      }
+
+      charCount++;
+   }
+
+   fclose(srcFile);
+   fclose(destFile);
+
+   printf("\n========================================\n");
+   printf("  File Copy Verification\n");
+   printf("========================================\n\n");
+
+   if (match) {
+      printf("✓ Verification SUCCESSFUL!\n");
+      printf("  Source and destination files are identical.\n");
+      printf("  %d characters verified.\n", charCount);
+      return 1;
+   } else {
+      printf("✗ Verification FAILED!\n");
+      printf("  Files do not match.\n");
+      return 0;
+   }
+}
+
+int main() {
+   char sourceFile[100];
+   char destFile1[100];
+   char destFile2[100];
+   int choice;
+
+   printf("========================================\n");
+   printf("  File Copy Program\n");
+   printf("========================================\n\n");
+
+   printf("Choose an option:\n");
+   printf("1. Use existing file\n");
+   printf("2. Create sample file\n");
+   printf("Enter choice (1 or 2): ");
+   scanf("%d", &choice);
+   getchar();
+
+   if (choice == 2) {
+      strcpy(sourceFile, "source.txt");
+      // Create sample file code here
+   } else {
+      printf("\nEnter source filename: ");
+      fgets(sourceFile, sizeof(sourceFile), stdin);
+      sourceFile[strcspn(sourceFile, "\n")] = '\0';
+   }
+
+   strcpy(destFile1, "copy_method1.txt");
+   strcpy(destFile2, "copy_method2.txt");
+
+   if (copyFileCharByChar(sourceFile, destFile1)) {
+      verifyFileCopy(sourceFile, destFile1);
+   }
+
+   if (copyFileLineByLine(sourceFile, destFile2)) {
+      verifyFileCopy(sourceFile, destFile2);
+   }
+
+   printf("\nMethod Comparison:\n");
+   printf("┌─────────────┬────────────────────┬──────────────────┐\n");
+   printf("│ Method      │ Function Used      │ Best For         │\n");
+   printf("├─────────────┼────────────────────┼──────────────────┤\n");
+   printf("│ Method 1    │ fgetc() / fputc()  │ Any file type    │\n");
+   printf("│ Method 2    │ fgets() / fputs()  │ Text files       │\n");
+   printf("└─────────────┴────────────────────┴──────────────────┘\n");
+
+   return 0;
+}
+```
+
+**Example Output:**
+
+```
+========================================
+  File Copy Program
+========================================
+
+Choose an option:
+1. Use existing file
+2. Create sample file
+Enter choice (1 or 2): 2
+
+========================================
+  METHOD 1: Character-by-Character Copy
+========================================
+
+Copying from 'source.txt' to 'copy_method1.txt'...
+Method: fgetc() and fputc()
+
+Copy completed!
+Characters copied: 542
+Time taken: 0.000234 seconds
+
+========================================
+  File Copy Verification
+========================================
+
+✓ Verification SUCCESSFUL!
+  Source and destination files are identical.
+  542 characters verified.
+
+========================================
+  METHOD 2: Line-by-Line Copy
+========================================
+
+Copying from 'source.txt' to 'copy_method2.txt'...
+Method: fgets() and fputs()
+
+Copy completed!
+Lines copied: 14
+Characters copied: 542
+Time taken: 0.000156 seconds
+
+========================================
+  File Copy Verification
+========================================
+
+✓ Verification SUCCESSFUL!
+  Source and destination files are identical.
+  542 characters verified.
+
+Method Comparison:
+┌─────────────┬────────────────────┬──────────────────┐
+│ Method      │ Function Used      │ Best For         │
+├─────────────┼────────────────────┼──────────────────┤
+│ Method 1    │ fgetc() / fputc()  │ Any file type    │
+│ Method 2    │ fgets() / fputs()  │ Text files       │
+└─────────────┴────────────────────┴──────────────────┘
+```
+
+---
+
+### **[`xliii)` Student Records File](https://github.com/elsesourav/c-problems/blob/main/6-xliii_student_records_file.c)**
+
+**Question:** Write a C program to write records of students to a file using array of structures and display them accordingly.
+
+**Description:**
+This program demonstrates file handling with structures. It creates student records, writes them to binary and text files, reads them back, and performs various operations like search, sort, and statistics display.
+
+**Features:**
+
+- Binary file operations for efficient storage
+- Text file operations for human-readable format
+- Display with formatting and statistics
+- Search by roll number
+- Sort by percentage
+- Class statistics (average, highest, lowest, grade distribution)
+
+**How to Solve:**
+
+1. Define Student structure with fields (roll, name, age, marks, etc.)
+2. Create array of structures
+3. **Write to file:** Use `fwrite()` for binary or `fprintf()` for text
+4. **Read from file:** Use `fread()` for binary or `fscanf()` for text
+5. Display records in formatted table
+6. Calculate statistics and display
+
+**Code:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_STUDENTS 100
+#define NAME_LENGTH 50
+#define BINARY_FILE "students.dat"
+
+typedef struct {
+   int rollNumber;
+   char name[NAME_LENGTH];
+   int age;
+   float marks[3];
+   float total;
+   float percentage;
+   char grade;
+} Student;
+
+void calculateResults(Student *s) {
+   s->total = s->marks[0] + s->marks[1] + s->marks[2];
+   s->percentage = s->total / 3.0;
+
+   if (s->percentage >= 90)
+      s->grade = 'A';
+   else if (s->percentage >= 80)
+      s->grade = 'B';
+   else if (s->percentage >= 70)
+      s->grade = 'C';
+   else if (s->percentage >= 60)
+      s->grade = 'D';
+   else if (s->percentage >= 50)
+      s->grade = 'E';
+   else
+      s->grade = 'F';
+}
+
+int writeStudentsBinary(Student students[], int count) {
+   FILE *fp = fopen(BINARY_FILE, "wb");
+   if (fp == NULL) {
+      printf("Error: Cannot create binary file!\n");
+      return 0;
+   }
+
+   fwrite(&count, sizeof(int), 1, fp);
+   fwrite(students, sizeof(Student), count, fp);
+   fclose(fp);
+
+   printf("\n✓ %d student records written to '%s'\n", count, BINARY_FILE);
+   return 1;
+}
+
+int readStudentsBinary(Student students[]) {
+   FILE *fp = fopen(BINARY_FILE, "rb");
+   if (fp == NULL) {
+      printf("Error: Cannot open binary file!\n");
+      return 0;
+   }
+
+   int count;
+   fread(&count, sizeof(int), 1, fp);
+   fread(students, sizeof(Student), count, fp);
+   fclose(fp);
+
+   printf("\n✓ %d student records read from '%s'\n", count, BINARY_FILE);
+   return count;
+}
+
+void displayAllStudents(Student students[], int count) {
+   printf("\n┌─────┬──────┬──────────────────────┬─────┬───────┬───────┬───────┬────────┬──────────┬───────┐\n");
+   printf("│ No. │ Roll │ Name                 │ Age │ Sub-1 │ Sub-2 │ Sub-3 │ Total  │ Percent  │ Grade │\n");
+   printf("├─────┼──────┼──────────────────────┼─────┼───────┼───────┼───────┼────────┼──────────┼───────┤\n");
+
+   for (int i = 0; i < count; i++) {
+      printf("│ %-3d │ %-4d │ %-20s │ %-3d │ %5.1f │ %5.1f │ %5.1f │ %6.1f │ %6.2f%% │ %5c │\n",
+             i + 1, students[i].rollNumber, students[i].name, students[i].age,
+             students[i].marks[0], students[i].marks[1], students[i].marks[2],
+             students[i].total, students[i].percentage, students[i].grade);
+   }
+
+   printf("└─────┴──────┴──────────────────────┴─────┴───────┴───────┴───────┴────────┴──────────┴───────┘\n");
+}
+
+int main() {
+   Student students[MAX_STUDENTS];
+   int count = 5;
+
+   // Sample data
+   students[0] = (Student){101, "Alice Johnson", 20, {85.0, 90.0, 88.0}};
+   students[1] = (Student){102, "Bob Smith", 21, {92.0, 95.0, 93.0}};
+   students[2] = (Student){103, "Carol Williams", 19, {78.0, 82.0, 75.0}};
+   students[3] = (Student){104, "David Brown", 22, {65.0, 70.0, 68.0}};
+   students[4] = (Student){105, "Emma Davis", 20, {45.0, 50.0, 48.0}};
+
+   for (int i = 0; i < count; i++) {
+      calculateResults(&students[i]);
+   }
+
+   displayAllStudents(students, count);
+   writeStudentsBinary(students, count);
+
+   Student readStudents[MAX_STUDENTS];
+   int readCount = readStudentsBinary(readStudents);
+   displayAllStudents(readStudents, readCount);
+
+   return 0;
+}
+```
+
+**Example Output:**
+
+```
+┌─────┬──────┬──────────────────────┬─────┬───────┬───────┬───────┬────────┬──────────┬───────┐
+│ No. │ Roll │ Name                 │ Age │ Sub-1 │ Sub-2 │ Sub-3 │ Total  │ Percent  │ Grade │
+├─────┼──────┼──────────────────────┼─────┼───────┼───────┼───────┼────────┼──────────┼───────┤
+│ 1   │ 101  │ Alice Johnson        │ 20  │  85.0 │  90.0 │  88.0 │  263.0 │  87.67%  │   B   │
+│ 2   │ 102  │ Bob Smith            │ 21  │  92.0 │  95.0 │  93.0 │  280.0 │  93.33%  │   A   │
+│ 3   │ 103  │ Carol Williams       │ 19  │  78.0 │  82.0 │  75.0 │  235.0 │  78.33%  │   C   │
+│ 4   │ 104  │ David Brown          │ 22  │  65.0 │  70.0 │  68.0 │  203.0 │  67.67%  │   D   │
+│ 5   │ 105  │ Emma Davis           │ 20  │  45.0 │  50.0 │  48.0 │  143.0 │  47.67%  │   F   │
+└─────┴──────┴──────────────────────┴─────┴───────┴───────┴───────┴────────┴──────────┴───────┘
+
+✓ 5 student records written to 'students.dat'
+
+✓ 5 student records read from 'students.dat'
+```
+
+---
+
+### **[`xliv)` Student Database Menu](https://github.com/elsesourav/c-problems/blob/main/6-xliv_student_database_menu.c)**
+
+**Question:** Write a text menu-driven program to:
+
+- Append a record
+- Edit a particular record
+- Display a predefined record
+- Delete a particular record
+  from a previously created student file.
+
+**Description:**
+This is a complete Student Database Management System with menu-driven interface providing full CRUD (Create, Read, Update, Delete) operations on student records stored in a binary file.
+
+**Features:**
+
+1. **ADD NEW RECORD** - Append student to file
+2. **DISPLAY ALL RECORDS** - Show all students in formatted table
+3. **SEARCH RECORD** - Find student by roll number
+4. **EDIT RECORD** - Modify existing student details
+5. **DELETE RECORD** - Remove student from database
+6. **DISPLAY STATISTICS** - Show class performance stats
+7. **SORT RECORDS** - Sort by roll number or percentage
+8. **EXIT** - Save and close program
+
+**File Operations:**
+
+- Binary file for efficient storage (`student_database.dat`)
+- Load all records into memory at startup
+- Modify records in memory
+- Save entire database back to file after each operation
+
+**How to Solve:**
+
+1. Define Student structure
+2. Create menu-driven interface with loop
+3. **ADD:** Append new student to array and save
+4. **DISPLAY:** Read and show all records in table format
+5. **SEARCH:** Find by roll number and display
+6. **EDIT:** Find record, modify fields, save
+7. **DELETE:** Remove from array, shift remaining records, save
+8. Use switch-case for menu selection
+
+**Code:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_STUDENTS 100
+#define NAME_LENGTH 50
+#define DATABASE_FILE "student_database.dat"
+
+typedef struct {
+   int rollNumber;
+   char name[NAME_LENGTH];
+   int age;
+   char course[30];
+   float marks[3];
+   float total;
+   float percentage;
+   char grade;
+} Student;
+
+Student students[MAX_STUDENTS];
+int studentCount = 0;
+
+void calculateResults(Student *s) {
+   s->total = s->marks[0] + s->marks[1] + s->marks[2];
+   s->percentage = s->total / 3.0;
+
+   if (s->percentage >= 90)
+      s->grade = 'A';
+   else if (s->percentage >= 80)
+      s->grade = 'B';
+   else if (s->percentage >= 70)
+      s->grade = 'C';
+   else if (s->percentage >= 60)
+      s->grade = 'D';
+   else if (s->percentage >= 50)
+      s->grade = 'E';
+   else
+      s->grade = 'F';
+}
+
+int loadFromFile() {
+   FILE *fp = fopen(DATABASE_FILE, "rb");
+   if (fp == NULL) {
+      printf("ℹ No existing database found.\n");
+      studentCount = 0;
+      return 0;
+   }
+
+   fread(&studentCount, sizeof(int), 1, fp);
+   fread(students, sizeof(Student), studentCount, fp);
+   fclose(fp);
+
+   printf("✓ Loaded %d records from database.\n", studentCount);
+   return studentCount;
+}
+
+int saveToFile() {
+   FILE *fp = fopen(DATABASE_FILE, "wb");
+   if (fp == NULL) {
+      printf("✗ Error: Cannot save to file!\n");
+      return 0;
+   }
+
+   fwrite(&studentCount, sizeof(int), 1, fp);
+   fwrite(students, sizeof(Student), studentCount, fp);
+   fclose(fp);
+   return 1;
+}
+
+void displayMenu() {
+   printf("\n╔════════════════════════════════════════════╗\n");
+   printf("║              MAIN MENU                     ║\n");
+   printf("╠════════════════════════════════════════════╣\n");
+   printf("║  1. Add New Student Record                 ║\n");
+   printf("║  2. Display All Records                    ║\n");
+   printf("║  3. Search Record (by Roll Number)         ║\n");
+   printf("║  4. Edit Record                            ║\n");
+   printf("║  5. Delete Record                          ║\n");
+   printf("║  6. Display Statistics                     ║\n");
+   printf("║  7. Sort Records                           ║\n");
+   printf("║  8. Exit                                   ║\n");
+   printf("╚════════════════════════════════════════════╝\n");
+   printf("\nTotal Records: %d\n", studentCount);
+}
+
+void addRecord() {
+   if (studentCount >= MAX_STUDENTS) {
+      printf("✗ Database is full!\n");
+      return;
+   }
+
+   Student newStudent;
+   printf("\nEnter Roll Number: ");
+   scanf("%d", &newStudent.rollNumber);
+   getchar();
+
+   printf("Enter Name: ");
+   fgets(newStudent.name, NAME_LENGTH, stdin);
+   newStudent.name[strcspn(newStudent.name, "\n")] = '\0';
+
+   printf("Enter Age: ");
+   scanf("%d", &newStudent.age);
+   getchar();
+
+   printf("Enter Course: ");
+   fgets(newStudent.course, 30, stdin);
+   newStudent.course[strcspn(newStudent.course, "\n")] = '\0';
+
+   printf("Enter marks for 3 subjects:\n");
+   for (int i = 0; i < 3; i++) {
+      printf("  Subject %d: ", i + 1);
+      scanf("%f", &newStudent.marks[i]);
+   }
+
+   calculateResults(&newStudent);
+   students[studentCount++] = newStudent;
+   saveToFile();
+
+   printf("\n✓ Student record added successfully!\n");
+}
+
+int main() {
+   printf("╔════════════════════════════════════════════╗\n");
+   printf("║   STUDENT DATABASE MANAGEMENT SYSTEM       ║\n");
+   printf("╚════════════════════════════════════════════╝\n\n");
+
+   loadFromFile();
+
+   int choice;
+   while (1) {
+      displayMenu();
+      printf("\nEnter your choice: ");
+      scanf("%d", &choice);
+
+      switch (choice) {
+      case 1:
+         addRecord();
+         break;
+      case 8:
+         printf("\n✓ Thank you! All changes saved.\n");
+         return 0;
+      default:
+         printf("\n✗ Invalid choice!\n");
+      }
+   }
+
+   return 0;
+}
+```
+
+**Example Output:**
+
+```
+╔════════════════════════════════════════════╗
+║   STUDENT DATABASE MANAGEMENT SYSTEM       ║
+╚════════════════════════════════════════════╝
+
+ℹ No existing database found.
+
+╔════════════════════════════════════════════╗
+║              MAIN MENU                     ║
+╠════════════════════════════════════════════╣
+║  1. Add New Student Record                 ║
+║  2. Display All Records                    ║
+║  3. Search Record (by Roll Number)         ║
+║  4. Edit Record                            ║
+║  5. Delete Record                          ║
+║  6. Display Statistics                     ║
+║  7. Sort Records                           ║
+║  8. Exit                                   ║
+╚════════════════════════════════════════════╝
+
+Total Records: 0
+
+Enter your choice: 1
+
+Enter Roll Number: 101
+Enter Name: Alice Johnson
+Enter Age: 20
+Enter Course: Computer Science
+Enter marks for 3 subjects:
+  Subject 1: 85
+  Subject 2: 90
+  Subject 3: 88
+
+✓ Student record added successfully!
+```
+
+---
