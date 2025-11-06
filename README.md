@@ -1,17 +1,64 @@
-# C Programming - Complete Exercise Library
+<div align="center">
+
+# [`C Programming Problems - WEBSCTE (2025)`](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/README.md)
+
+</div>
 
 A comprehensive collection of 43 C programming exercises covering fundamental to advanced concepts, organized in 6 sections with detailed implementations.
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Section 1: Format Specifiers (i-iv)](#section-1-format-specifiers)
+  - [i) Number Format Display](#i-number-format-display)
+  - [ii) Leading and Trailing Zeros](#ii-leading-and-trailing-zeros)
+  - [iii) Left and Right Justification](#iii-left-and-right-justification)
+  - [iv) Different Format Specifiers](#iv-different-format-specifiers)
 - [Section 2: Control Structures (v-x)](#section-2-control-structures)
+  - [v) Greatest and Smallest of Three Numbers](#v-greatest-and-smallest-of-three-numbers)
+  - [vi) Grade Classification](#vi-grade-classification)
+  - [vii) Even or Odd Checker](#vii-even-or-odd-checker)
+  - [viii) Number Spelling](#viii-number-spelling)
+  - [ix) Calculator Menu](#ix-calculator-menu)
+  - [x) Quadratic Equation Roots](#x-quadratic-equation-roots)
 - [Section 3: Loops & Patterns (xi-xix)](#section-3-loops--patterns)
+  - [xi) College Name Display](#xi-college-name-display)
+  - [xii) Break & Continue Demo](#xii-break--continue-demo)
+  - [xiii) Sum of Natural, Even & Odd Numbers](#xiii-sum-of-natural-even--odd-numbers)
+  - [xiv) GCD & LCM Calculator](#xiv-gcd--lcm-calculator)
+  - [xv) Number Triangle Patterns](#xv-number-triangle-patterns)
+  - [xvi) Pascal's Triangle](#xvi-pascals-triangle)
+  - [xvii) Nested Series Sum](#xvii-nested-series-sum)
+  - [xviii) Prime Numbers in Range](#xviii-prime-numbers-in-range)
+  - [xix) Armstrong Numbers (100-1000)](#xix-armstrong-numbers-100-1000)
 - [Section 4: Arrays, Matrices & Strings (xxi-xxx)](#section-4-arrays-matrices--strings)
+  - [xxi) Array Largest & Smallest](#xxi-array-largest--smallest)
+  - [xxii) Array Sorting](#xxii-array-sorting)
+  - [xxiii) 3×3 Matrix Input & Display](#xxiii-33-matrix-input--display)
+  - [xxiv) Matrix Addition & Subtraction](#xxiv-matrix-addition--subtraction)
+  - [xxv) Matrix Multiplication](#xxv-matrix-multiplication)
+  - [xxvi) Vowels & Consonants Counter](#xxvi-vowels--consonants-counter)
+  - [xxvii) String Functions Implementation](#xxvii-string-functions-implementation)
+  - [xxviii) Palindrome Checker](#xxviii-palindrome-checker)
+  - [xxix) String Find & Replace](#xxix-string-find--replace)
+  - [xxx) String Abbreviation](#xxx-string-abbreviation)
 - [Section 5: Functions, Pointers & Structures (xxxi-xxxix)](#section-5-functions-pointers--structures)
+  - [xxxi) nCr Combination Calculator](#xxxi-ncr-combination-calculator)
+  - [xxxii) Exponential Series Calculator](#xxxii-exponential-series-calculator)
+  - [xxxiii) Array Min-Max Interchange](#xxxiii-array-min-max-interchange)
+  - [xxxiv) Factorial Using Recursion](#xxxiv-factorial-using-recursion)
+  - [xxxv) Call by Value vs Call by Reference](#xxxv-call-by-value-vs-call-by-reference)
+  - [xxxvi) Array Using Pointer](#xxxvi-array-using-pointer)
+  - [xxxvii) Text Analysis Using Pointer](#xxxvii-text-analysis-using-pointer)
+  - [xxxviii) Time Operations](#xxxviii-time-operations)
+  - [xxxix) Structure Pointer](#xxxix-structure-pointer)
 - [Section 6: File Handling (xl-xliv)](#section-6-file-handling)
+  - [xl) File Handling Modes](#xl-file-handling-modes)
+  - [xli) Count Characters and Lines](#xli-count-characters-and-lines)
+  - [xlii) File Copy Methods](#xlii-file-copy-methods)
+  - [xliii) Student Records File](#xliii-student-records-file)
+  - [xliv) Student Database Menu](#xliv-student-database-menu)
 
 ---
 
@@ -83,6 +130,8 @@ Hexadecimal with prefix:  0xff
 Hexadecimal with prefix:  0XFF
 Octal with prefix:        0377
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -164,6 +213,8 @@ Width 10, 2 decimals:           3.14
 Width 12, 3 decimals:     0003.140
 Width 15, 5 decimals:     00003.14000
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -247,6 +298,8 @@ RIGHT: |       12345| LEFT: |12345       |
 RIGHT: |       67.890| LEFT: |67.890      |
 RIGHT: |          Hello| LEFT: |Hello          |
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -359,6 +412,8 @@ Output:
 %E (SCIENTIFIC):           2.718280E+00
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 <div align="center">
@@ -437,6 +492,8 @@ Smallest number: 10.00
 Difference: 20.00
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`vi)` Grade Classification](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-vi_grade_classification.c)**
@@ -506,6 +563,8 @@ Grade: DISTINCTION
 Performance: Excellent! Outstanding achievement.
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`vii)` Even or Odd Checker](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-vii_even_odd_checker.c)**
@@ -568,6 +627,8 @@ Explanation: 10 is divisible by 2 (remainder = 0)
 Mathematical Info:
 10 ÷ 2 = 5 (quotient), remainder = 0
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -652,6 +713,8 @@ Output:
 Number entered: 5
 Spelling: Five
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -756,6 +819,8 @@ Operation: ADDITION
 25.00 + 15.00 = 40.00
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`x)` Quadratic Equation Roots](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/2-x_quadratic_equation_roots.c)**
@@ -845,6 +910,8 @@ Root 1 = 3.00
 Root 2 = 2.00
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 <div align="center">
@@ -932,6 +999,8 @@ Output:
 ...
 20. XYZ College of Engineering
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -1055,6 +1124,8 @@ Row 3: 3 6 9 12 [Break at 3*5=15]
 Row 4: 4 8 12 [Break at 4*4=16]
 Row 5: 5 10 [Break at 5*3=15]
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -1194,6 +1265,8 @@ Sum of Even numbers = 50×(50+1) = 2550
 Sum of Odd numbers = 50² = 2500
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xiv)` GCD & LCM Calculator](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xiv_gcd_lcm.c)**
@@ -1319,6 +1392,8 @@ Output:
 GCD(24, 36) = 12
 LCM(24, 36) = 72
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -1487,6 +1562,8 @@ Pattern 6: Floyd's Triangle
 11  12  13  14  15
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xvi)` Pascal's Triangle](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xvi_pascal_triangle.c)**
@@ -1628,6 +1705,8 @@ Output:
      1     3     3     1
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xvii)` Nested Series Sum](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xvii_nested_series_sum.c)**
@@ -1764,6 +1843,8 @@ Input:
 Output:
 Total Sum = 10×11×12/6 = 220
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -1906,6 +1987,8 @@ Average of prime numbers: 150.81
 Density: 20.79% of numbers in range are prime
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xix)` Armstrong Numbers (100-1000)](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/3-xix_armstrong_numbers.c)**
@@ -2040,6 +2123,8 @@ Armstrong Numbers between 100 and 1000:
 Total Armstrong numbers found: 4
 The Armstrong numbers are: 153, 370, 371, 407
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -2213,6 +2298,8 @@ Smallest element:  25 (at position 4, index 3)
 Largest (100) appears at: 0 2 (2 times)
 Smallest (25) appears at: 3 (1 time)
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -2443,6 +2530,8 @@ Ascending Order : [ 1 2 5 8 9 ]
 Descending Order: [ 9 8 5 2 1 ]
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxiii)` 3×3 Matrix Input & Display](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxiii_matrix_3x3_input_display.c)**
@@ -2622,6 +2711,8 @@ Column 2: 18
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxiv)` Matrix Addition & Subtraction](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxiv_matrix_addition_subtraction.c)**
@@ -2794,6 +2885,8 @@ Addition:    A[0][0] + B[0][0] = 1 + 5 = 6
 Subtraction: A[0][0] - B[0][0] = 1 - 5 = -4
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -3038,6 +3131,8 @@ For A(m×n) × B(n×p):
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxvi)` Vowels & Consonants Counter](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxvi_vowels_consonants_counter.c)**
@@ -3231,6 +3326,8 @@ Spaces:       13.64%
 Special:      4.55%
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxvii)` String Functions Implementation](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxvii_string_functions_implementation.c)**
@@ -3415,6 +3512,8 @@ Comparing: "apple" vs "banana"
 Result: -1
 Interpretation: "apple" comes BEFORE "banana"
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -3633,6 +3732,8 @@ Forward:    h   e   l   l   o
 Backward:   o   l   l   e   h
 Match:      ✗   ✗   ✓   ✗   ✗
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -3882,6 +3983,8 @@ New length:      61 characters
 Replacements:    3
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxx)` String Abbreviation](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/4-xxx_string_abbreviation.c)**
@@ -4119,6 +4222,8 @@ Individual words:
 Compression ratio: 88.5%
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 <div align="center">
@@ -4351,6 +4456,8 @@ Property: 5C2 = 5C3 = 10
 
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -4645,6 +4752,8 @@ Accuracy achieved: 99.940577%
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxxiii)` Array Min-Max Interchange](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxiii_array_min_max_swap.c)**
@@ -4887,6 +4996,8 @@ Array size: 5 elements
 Result: Successfully swapped!
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -5199,6 +5310,8 @@ Recursion depth: 5 levels
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxxv)` Call by Value vs Call by Reference](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxv_call_by_value_reference.c)**
@@ -5399,6 +5512,8 @@ After calling swapByReference():  num1 = 20, num2 = 10
 
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -5640,6 +5755,8 @@ Total memory: 20 bytes
 Pointer used: Successfully!
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -5916,6 +6033,8 @@ Total lines:      3
 Memory used:      45 bytes
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -6250,6 +6369,8 @@ Difference:   05:05:15
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xxxix)` Structure Pointer](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/5-xxxix_structure_pointer.c)**
@@ -6501,6 +6622,8 @@ Advantages of Structure Pointers:
 
 ========================================
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -7046,6 +7169,8 @@ Files created in this demonstration:
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xli)` Count Characters and Lines](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xli_count_chars_lines.c)**
@@ -7383,6 +7508,8 @@ Analysis complete!
 ========================================
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xlii)` File Copy Methods](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xlii_file_copy_methods.c)**
@@ -7697,6 +7824,8 @@ Method Comparison:
 └─────────────┴────────────────────┴──────────────────┘
 ```
 
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
+
 ---
 
 ### **[`xliii)` Student Records File](https://github.com/elsesourav/c-problems-webscte-2025/blob/main/6-xliii_student_records_file.c)**
@@ -7852,6 +7981,8 @@ int main() {
 
 ✓ 5 student records read from 'students.dat'
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
 
@@ -8087,5 +8218,7 @@ Enter marks for 3 subjects:
 
 ✓ Student record added successfully!
 ```
+
+<div align="right"><a href="#table-of-contents">⬆️ Back to Table of Contents</a></div>
 
 ---
